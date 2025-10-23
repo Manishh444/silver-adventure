@@ -17,72 +17,6 @@ export const PhoneIcon = ({ className = "size-6" }) => {
   );
 };
 
-export const ExpertIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="w-10 h-10 text-blue-600"
-  >
-    <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4s-4 1.79-4 4 1.79 4 4 4z" />
-    <path d="M20 21v-2a4 4 0 0 0-3-3.87" />
-    <path d="M4 21v-2a4 4 0 0 1 3-3.87" />
-    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-  </svg>
-);
-
-export const QualityIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="w-10 h-10 text-green-600"
-  >
-    <path d="M12 2l2.09 6.26L20 9.27l-5 3.73L16.18 20 12 16.9 7.82 20 9 13 4 9.27l5.91-.99L12 2z" />
-    <path d="M9 11l2 2 4-4" />
-  </svg>
-);
-
-export const TimelyIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="w-10 h-10 text-yellow-500"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <polyline points="12 6 12 12 16 14" />
-  </svg>
-);
-
-export const SupportIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="w-10 h-10 text-orange-600"
-  >
-    <path d="M12 22s8-4 8-10V7a8 8 0 0 0-16 0v5c0 6 8 10 8 10z" />
-    <circle cx="12" cy="11" r="3" />
-  </svg>
-);
-
 export const RatingIcon = () => {
   return (
     <svg
@@ -179,7 +113,7 @@ export const MailIcon = ({ className = "w-[64px] h-[64px]" }) => {
   );
 };
 
-export const TimeIcon = ({className="w-[64px] h-[64px]"}) => {
+export const TimeIcon = ({ className = "w-[64px] h-[64px]" }) => {
   return (
     <svg
       className={className}

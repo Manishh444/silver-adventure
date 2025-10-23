@@ -1,6 +1,7 @@
 import React from "react";
 import heroImage from "../assets/heroImage.png";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -35,11 +36,13 @@ const HeroSection = () => {
               spanClass="text-white text-sm"
               text="Get Free Quote &rarr;"
             />
-            <Button
-              className="px-6 py-2 rounded-md bg-white hover:bg-[#355E3C] group"
-              spanClass="invisible text-white text-sm group-hover:visible "
-              text="Message Us"
-            />
+            <Link to="/contact">
+              <Button
+                className="px-6 py-2 rounded-md bg-white hover:bg-[#355E3C] group"
+                spanClass="invisible text-white text-sm group-hover:visible "
+                text="Message Us"
+              />
+            </Link>
           </div>
         </div>
       </div>

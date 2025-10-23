@@ -6,9 +6,7 @@ import MainSection from "./Components/MainSection";
 function App() {
   return (
     <>
-      <Header />
-      <MainSection />
-      <Footer />
+      
     </>
   );
 }

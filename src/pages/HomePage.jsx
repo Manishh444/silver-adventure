@@ -1,34 +1,35 @@
 import React from "react";
-import Card, { cardData } from "./Card";
-import ProjectCard, { buildingData } from "./ProjectCard";
-import Button from "./Button";
-import TestimonialCard, { testimonials } from "./TestimonialCard";
-import HeroSection from "./HeroSection";
+import HeroSection from "../Components/HeroSection";
+import Card, { cardData } from "../Components/Card";
+import ProjectCard, { buildingData } from "../Components/ProjectCard";
+import Button from "../Components/Button";
+import TestimonialCard, { testimonials } from "../Components/TestimonialCard";
+import { Link } from "react-router-dom";
 
-const MainSection = () => {
+const HomePage = () => {
   return (
     <main className="w-full">
       <HeroSection />
-      <section id="about" className="py-6">
+      <section className="py-6">
         <div className="max-w-screen-xl mx-auto px-8">
           <div className="flex flex-col items-center text-center py-12 space-y-4">
-            <h2 className="text-3xl">Why Choose QuadcoreInfra?</h2>
+            <h2 className="text-4xl font-bold">Why Choose QuadcoreInfra?</h2>
             <p className="text-base w-[600px]">
               We combine expertise, quality, and innovation to deliver
               exceptional results that exceed expectations.
             </p>
           </div>
-          <div className="flex justify-center gap-8 py-12 items-center mb-6">
+          <div className="grid grid-cols-4 gap-8 py-12 mb-6">
             {cardData.map((card) => {
               return <Card key={card.id} cardDetails={card} />;
             })}
           </div>
         </div>
       </section>
-      <section id="projects" className=" bg-gray-100 py-6">
+      <section className=" bg-gray-100 py-6">
         <div className="max-w-screen-xl mx-auto px-8">
           <div className="flex flex-col items-center text-center py-12 space-y-4">
-            <h2 className="text-3xl">Featured Projects</h2>
+            <h2 className="text-4xl font-bold">Featured Projects</h2>
             <p className="text-base w-[600px]">
               Showcasing our latest completed projects that demonstrate our
               commitment to quality and innovation .
@@ -49,10 +50,10 @@ const MainSection = () => {
           </div>
         </div>
       </section>
-      <section id="services" className="py-6">
+      <section className="py-6">
         <div className="max-w-screen-xl mx-auto px-8">
           <div className="flex flex-col items-center text-center py-12 space-y-4">
-            <h2 className="text-3xl">What Our Clients Say</h2>
+            <h2 className="text-4xl font-bold">What Our Clients Say</h2>
             <p className="text-base w-[600px]">
               Don't just take our word for it. Here's what our satisfied clients
               have to say about our work .
@@ -67,10 +68,10 @@ const MainSection = () => {
           </div>
         </div>
       </section>
-      <section id="contact" className="py-6 bg-[#355E3C]">
+      <section className="py-6 bg-[#355E3C]">
         <div className="max-w-screen-xl mx-auto px-8">
           <div className="flex flex-col items-center text-center py-12 space-y-4">
-            <h2 className="text-3xl">Ready to Start Your Project?</h2>
+            <h2 className="text-4xl font-bold">Ready to Start Your Project?</h2>
             <p className="text-lg w-[600px]">
               Let's transform your vision into reality. Get a free consultation
               and quote today .
@@ -81,11 +82,13 @@ const MainSection = () => {
                 spanClass="text-white text-sm"
                 text="Get Free Consultation &rarr;"
               />
-              <Button
-                className="px-6 py-2 rounded-md bg-white hover:bg-[#f9971a] group"
-                spanClass="invisible text-white text-sm group-hover:visible "
-                text="Message Us"
-              />
+              <Link to="/contact">
+                <Button
+                  className="px-6 py-2 rounded-md bg-white hover:bg-[#f9971a] group"
+                  spanClass="invisible text-white text-sm group-hover:visible "
+                  text="Contact Us"
+                />
+              </Link>
             </div>
           </div>
         </div>
@@ -94,4 +97,4 @@ const MainSection = () => {
   );
 };
 
-export default MainSection;
+export default HomePage;

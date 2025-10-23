@@ -2,7 +2,20 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        quadcore: {
+          primary: "#13392D",
+          accent: "#235C49",
+          muted: "#527A6D",
+          lightGray: "#94A3B8",
+          lightBackground: "#F8F7F1",
+          bgCard: "#E8F0EA",
+          bgIcon: "#E0F2F1",
+          hoverText: "#235C4A",
+        },
+      },
+    },
   },
   plugins: [],
 };
