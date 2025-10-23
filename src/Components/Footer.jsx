@@ -8,19 +8,19 @@ import { LocationIcon, MailIcon, PhoneIcon, TimeIcon } from "./IconSvg";
 
 const Footer = () => {
   return (
-    <footer className="py-6 bg-[#F5F2E7]">
-      <div className="grid grid-cols-4 items-start gap-4 mx-20 border-b-2 py-4">
+    <footer className="w-full py-6 bg-[#F5F2E7]">
+      <div className="max-w-screen-xl mx-auto px-8 grid grid-cols-4 items-start gap-4 border-b-2 py-4">
         <div className="space-y-2">
           <img
             src={logo}
             alt="Company Logo"
             className="w-32 h-16 hover:cursor-pointer"
           />
-          <p className="text-sm text-balance">
+          <p className="text-sm text-balance leading-relaxed">
             Transforming spaces with expert construction and innovative interior
             design solutions. Your dream project, our expertise
           </p>
-          <div className="flex gap-8 items-center">
+          <div className="flex gap-8 items-center space-y-2">
             <img
               src={fb}
               alt="facebook icon"
@@ -77,7 +77,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="py-2 flex justify-between text-sm mx-20">
+      <div className="max-w-screen-xl px-8 mx-auto py-2 flex justify-between text-sm">
         <p className="">© 2025 QuadCore Infra. All rights reserved.</p>
         <div className="flex gap-4">
           <p className="">Privacy Policy</p>

@@ -4,10 +4,14 @@ import { PhoneIcon } from "./IconSvg";
 
 const Header = () => {
   return (
-    <header>
-      <nav className="flex justify-around items-center bg-[#F5F2E7]">
+    <header className="w-full bg-[#F5F2E7] py-6">
+      <nav className="max-w-screen-xl mx-auto px-8 flex justify-between items-center">
         <div>
-          <img src={logo} alt="QuadCoreInfra Logo" className="w-32 h-16 hover:cursor-pointer" />
+          <img
+            src={logo}
+            alt="QuadCoreInfra Logo"
+            className="w-32 h-16 hover:cursor-pointer"
+          />
         </div>
         {/* <Link to="/">Home</Link>
         <Link>About Us</Link>

@@ -26,7 +26,7 @@ export const buildingData = [
 
 const ProjectCard = ({ projectCardDetails }) => {
   return (
-    <div className="h-auto border-[1px] py-12 text-balance rounded-md space-y-2 flex flex-col">
+    <div className="h-auto border-[1px] pb-12 text-balance rounded-md space-y-2 flex flex-col">
       <img
         className="object-cover h-60 rounded-t-md"
         src={projectCardDetails?.src}
