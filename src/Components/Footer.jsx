@@ -17,7 +17,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="w-full py-6 bg-quadcore-primary text-quadcore-lightBackground">
+    <footer className="w-full py-12 bg-quadcore-accent text-quadcore-lightBackground">
       <div className="max-w-screen-xl mx-auto px-8 grid grid-cols-4 items-start gap-4 border-b-2 py-4">
         <div className="space-y-2">
           <img

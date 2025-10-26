@@ -4,6 +4,7 @@ import MainPageLayout from "../layout/MainPageLayout";
 import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import ServicePage from "../pages/ServicePage";
+import OurWorkPage from "../pages/OurWorkPage";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: "/services",
         element: <ServicePage />,
+      },
+      {
+        path: "/work",
+        element: <OurWorkPage />,
       },
     ],
   },
