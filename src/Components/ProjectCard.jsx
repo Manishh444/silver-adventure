@@ -1,7 +1,7 @@
 export const buildingData = [
   {
     id: 1,
-    src: "../../public/villa.jpeg",
+    src: "/villa.jpeg",
     title: "Luxury Villa",
     type: "Residential",
     desc: "Modern 4BHK villa with contemporary design",
@@ -10,7 +10,7 @@ export const buildingData = [
   },
   {
     id: 2,
-    src: "../../public/office.jpeg",
+    src: "/office.jpeg",
     title: "Corporate Office",
     type: "Commercial",
     desc: "Complete office renovation with modern interiors",
@@ -19,7 +19,7 @@ export const buildingData = [
   },
   {
     id: 3,
-    src: "../../public/residencial.jpeg",
+    src: "/residencial.jpeg",
     title: "Residential Complex",
     type: "Construction",
     desc: "30-unit residential project with premium amenities",

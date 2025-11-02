@@ -5,7 +5,7 @@ const AboutPage = () => {
   return (
     <>
       <main className="w-full">
-        <section className="py-6">
+        <section className="mt-20 py-6">
           <div className="max-w-screen-xl mx-auto px-8">
             <div className="flex flex-col items-center text-center py-12 space-y-4">
               <h1 className="text-5xl text-quadcore-primary font-bold text-center">
@@ -60,7 +60,7 @@ const AboutPage = () => {
         <section className="py-6">
           <div className="max-w-screen-xl mx-auto px-8">
             <div className="flex flex-col items-center text-center py-12 space-y-4">
-              <h2 className="text-4xl font-bold text-quadcore-primary">
+              <h2 className="text-5xl font-bold text-quadcore-primary">
                 Our Core Values
               </h2>
               <div className="grid grid-cols-4 gap-8 py-12 mb-6">

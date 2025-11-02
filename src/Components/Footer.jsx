@@ -1,9 +1,5 @@
 import React from "react";
 import logo from "../assets/company-logo.png";
-import fb from "../assets/facebook.png";
-import insta from "../assets/instagram.png";
-import linkedin from "../assets/linkedin.png";
-import twitter from "../assets/twitter.png";
 import {
   MapPin,
   Phone,
@@ -18,7 +14,7 @@ import {
 const Footer = () => {
   return (
     <footer className="w-full py-12 bg-quadcore-accent text-quadcore-lightBackground">
-      <div className="max-w-screen-xl mx-auto px-8 grid grid-cols-4 items-start gap-4 border-b-2 py-4">
+      <div className="container mx-auto px-4 grid grid-cols-4 items-start gap-4 border-b-2 py-4">
         <div className="space-y-2">
           <img
             src={logo}

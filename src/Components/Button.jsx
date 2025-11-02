@@ -4,6 +4,7 @@ const Button = ({
   text = "Get Quote",
   className = "px-4 py-2 rounded-md",
   spanClass = "",
+  ...props
 }) => {
   return (
     <button className={className}>

@@ -5,40 +5,37 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section id="#" className="relative w-full">
-      <div className="">
+    <section id="#" className="w-full">
+      <div className="relative">
         <img
           src={heroImage}
           alt="Hero Section Image"
-          className="w-full max-h-[650px]"
+          className="w-full max-h-dvh m-0 p-0 z-0"
         />
-        <div className="absolute z-1 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/75"></div>
+        <div className="absolute top-0 z-10 bg-gradient-to-r from-[#235C49F2] via-[#235C49D9] to-[#235C49BF] opacity-80 w-full h-full"></div>
       </div>
-
-      <div className="max-w-screen-xl mx-auto px-8">
-        <div className="absolute top-20 leading-loose space-y-6">
+      <div className="container mx-auto px-4">
+        <div className="absolute z-20 top-72 flex flex-col justify-center leading-loose space-y-6">
           <div>
-            <h1 className="text-5xl font-extrabold text-white">
+            <h1 className="text-5xl font-extrabold text-quadcore-lightBackground flex flex-col">
               Building Dreams,
-            </h1>
-            <h1 className="text-5xl font-extrabold text-yellow-500">
-              Designing Futures
+              <span className="text-[#FF8001]">Designing Futures</span>
             </h1>
           </div>
-          <p className="text-white text-xl w-[600px]">
+          <p className="text-[#E3E7E0] text-lg md:w-[600px]">
             Expert construction and interior design services that transform your
             vision into reality. From concept to completion, we deliver
             excellence.
           </p>
           <div className="space-x-4">
             <Button
-              className="px-6 py-2 bg-[#355E3C] rounded-md hover:cursor-default"
+              className="px-6 py-2 bg-[#FF8001] rounded-md hover:cursor-default"
               spanClass="text-white text-sm"
               text="Get Free Quote &rarr;"
             />
             <Link to="/contact">
               <Button
-                className="px-6 py-2 rounded-md bg-white hover:bg-[#355E3C] group"
+                className="px-6 py-2 rounded-md bg-white hover:bg-[#FF8001] group"
                 spanClass="invisible text-white text-sm group-hover:visible "
                 text="Message Us"
               />

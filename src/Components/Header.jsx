@@ -1,20 +1,20 @@
 import React from "react";
 import logo from "../assets/company-logo.png";
-import { PhoneIcon } from "./IconSvg";
 import { Link } from "react-router-dom";
+import { Phone } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="w-full bg-quadcore-lightBackground py-2">
-      <nav className="max-w-screen-xl mx-auto px-8 flex justify-between items-center  text-quadcore-primary font-medium">
-        <div>
+    <header className="bg-quadcore-lightBackground text-sm px-4 py-4">
+      <nav className="flex justify-between items-center text-quadcore-primary font-medium">
+        <div className="w-fit">
           <img
             src={logo}
             alt="QuadCoreInfra Logo"
-            className="w-32 h-16 hover:cursor-pointer"
+            className="w-16 h-8 hover:cursor-pointer"
           />
         </div>
-        <div className="space-x-16">
+        <div className="space-x-8 hidden md:flex text-base">
           <Link to="/" className="hover:text-quadcore-hoverText">
             Home
           </Link>
@@ -37,10 +37,13 @@ const Header = () => {
           <a href="#projects">Our Work</a>
           <a href="#contact">Contact</a> */}
         </div>
-        <div className="flex space-x-2 hover:text-quadcore-hoverText">
-          <PhoneIcon />
-          <span>+919087654321</span>
-        </div>
+        <a
+          href="tel:+919087654321"
+          className="flex items-center gap-2 hover:text-quadcore-hoverText hover:cursor-pointer"
+        >
+          <Phone className="w-4 h-4 mt-1" />
+          <span>+91 90876 54321</span>
+        </a>
       </nav>
     </header>
   );
