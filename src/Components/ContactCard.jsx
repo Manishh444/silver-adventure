@@ -7,14 +7,14 @@ export const contactCards = [
     icon: Phone,
     title: "Phone",
     value: "+91 98765 43210",
-    href: "tel:+919876543210", // ✅ clickable phone
+    href: "tel:+919876543210",
   },
   {
     id: 2,
     icon: Mail,
     title: "Email",
     value: "info@quadcoreinfra.com",
-    href: "mailto:info@quadcoreinfra.com", // ✅ clickable email
+    href: "mailto:info@quadcoreinfra.com",
   },
   {
     id: 3,
@@ -36,25 +36,23 @@ const ContactCard = ({ cardDetails }) => {
   const IconComponent = cardDetails?.icon;
 
   return (
-    <div className="h-auto border shadow-sm flex items-start rounded-md p-6 space-x-4">
-      {/* Icon */}
+    <div className="h-auto border shadow-sm bg-white flex items-start rounded-md p-6 space-x-4">
       <span className="bg-quadcore-bgIcon rounded-full p-5 flex items-center justify-center">
         {IconComponent && (
           <IconComponent className="text-quadcore-accent w-6 h-6" />
         )}
       </span>
 
-      {/* Text Content */}
       <div className="flex flex-col justify-center space-y-1">
         <p className="text-lg font-semibold text-quadcore-primary">
           {cardDetails?.title}
         </p>
 
-        {/* ✅ Clickable phone/email */}
         {cardDetails?.href ? (
           <a
             href={cardDetails.href}
-            className="text-quadcore-accent hover:underline break-all">
+            className="text-quadcore-accent hover:underline break-all"
+          >
             {cardDetails?.value}
           </a>
         ) : (

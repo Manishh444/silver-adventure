@@ -6,7 +6,7 @@ import Footer from "../Components/Footer";
 const MainPageLayout = () => {
   return (
     <>
-      <div className="container m-0 p-0 min-w-full min-h-dvh border-4 border-red-700">
+      <div className="container m-0 p-0 min-w-full">
         <Header />
         <Outlet />
         <Footer />

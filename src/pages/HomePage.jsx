@@ -7,7 +7,7 @@ import Ready from "./HomeSections/Ready";
 
 const HomePage = () => {
   return (
-    <main className="w-full mt-20">
+    <main className="w-full">
       <HeroSection />
       <WhyUs />
       <Featured />

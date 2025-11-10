@@ -30,7 +30,7 @@ export const buildingData = [
 
 const ProjectCard = ({ projectCardDetails, children }) => {
   return (
-    <div className="h-auto border pb-6  rounded-md shadow-sm hover:shadow-xl space-y-2 flex flex-col text-quadcore-accent hover:-translate-y-2 transition-all duration-300">
+    <div className="h-auto border pb-6 bg-white  rounded-md shadow-sm hover:shadow-xl space-y-2 flex flex-col text-quadcore-accent hover:-translate-y-2 transition-all duration-300">
       <div className="h-60 overflow-hidden rounded-t-md">
         <img
           className="object-cover transition-transform duration-300 hover:scale-110 rounded-t-md"

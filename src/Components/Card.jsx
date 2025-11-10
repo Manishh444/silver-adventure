@@ -66,7 +66,7 @@ export const coreValueCards = [
 const Card = ({ cardDetails }) => {
   const IconComponent = cardDetails?.icon;
   return (
-    <div className="h-auto border-[1px] rounded-md p-6 space-y-2 flex flex-col items-center hover:shadow-lg transition-all duration-300">
+    <div className="h-auto border bg-white rounded-md p-6 space-y-2 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
       <span className="bg-[#FFF2EA] rounded-full p-5 flex items-center justify-center mb-2">
         {IconComponent && <IconComponent className="text-[#FF8001] w-6 h-6" />}
       </span>

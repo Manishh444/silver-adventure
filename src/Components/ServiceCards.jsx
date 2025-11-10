@@ -60,7 +60,7 @@ export const serviceCards = [
 const ServiceCards = ({ cardDetails }) => {
   const IconComponent = cardDetails?.icon;
   return (
-    <div className="h-auto border flex flex-col items-start rounded-lg shadow-sm p-8 space-y-2 leading-loose hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+    <div className="h-auto border flex flex-col bg-white items-start rounded-lg shadow-sm p-8 space-y-2 leading-loose hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
       <span className="bg-quadcore-bgIcon rounded-full p-5 flex items-center justify-center mb-2">
         {IconComponent && (
           <IconComponent className="text-quadcore-accent w-8 h-8" />

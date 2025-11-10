@@ -19,11 +19,11 @@ const ContactPage = () => {
   return (
     <>
       <main className="w-full">
-        <section className="mt-20 py-6">
-          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-quadcore-lightBackground mt-20 py-6">
+          <div className="px-4 sm:px-6 lg:px-8">
             {/* Heading Section */}
             <div className="flex flex-col items-center text-center py-12 space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl text-quadcore-primary font-bold">
+              <h1 className="text-4xl md:text-5xl text-quadcore-primary font-bold">
                 Get <span className="text-quadcore-accent">In Touch</span>
               </h1>
               <p className="text-base sm:text-lg leading-relaxed text-quadcore-muted max-w-2xl">
@@ -103,7 +103,8 @@ const ContactPage = () => {
                     cols="30"
                     rows="4"
                     placeholder="Message"
-                    className="placeholder-quadcore-accent border rounded-md px-2 py-3 focus:outline-quadcore-primary w-full"></textarea>
+                    className="placeholder-quadcore-accent border rounded-md px-2 py-3 focus:outline-quadcore-primary w-full"
+                  ></textarea>
 
                   <Button
                     type="submit"

@@ -27,7 +27,7 @@ export const testimonials = [
 
 const TestimonialCard = ({ testimonialDetail }) => {
   return (
-    <div className="h-auto border-[1px] rounded-md py-12 px-6 space-y-2 flex flex-col hover:shadow-lg transition-all duration-300">
+    <div className="h-auto border bg-white rounded-md py-12 px-6 space-y-2 flex flex-col hover:shadow-lg transition-all duration-300">
       <p className="">{testimonialDetail?.rating}</p>
       <p className="text-base text-quadcore-primary">
         {testimonialDetail?.text}
@@ -36,7 +36,7 @@ const TestimonialCard = ({ testimonialDetail }) => {
         <p className="text-base font-bold text-quadcore-primary">
           {testimonialDetail?.name}
         </p>
-        <p className="text-base text-quadcore-accent">
+        <p className="text-base text-quadcore-muted">
           {testimonialDetail?.role}
         </p>
       </div>

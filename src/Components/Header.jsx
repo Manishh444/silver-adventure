@@ -5,14 +5,16 @@ import { Phone } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="bg-quadcore-lightBackground text-sm px-4 py-4">
-      <nav className="flex justify-between items-center text-quadcore-primary font-medium">
+    <header className="bg-quadcore-lightBackground text-sm px-4 py-4 h-20 shadow-md flex items-center justify-between fixed top-0 min-w-full z-50 m-0">
+      <nav className="flex justify-between min-w-full items-center text-quadcore-primary font-medium">
         <div className="w-fit">
-          <img
-            src={logo}
-            alt="QuadCoreInfra Logo"
-            className="w-16 h-8 hover:cursor-pointer"
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="QuadCoreInfra Logo"
+              className="w-16 h-8 hover:cursor-pointer"
+            />
+          </Link>
         </div>
         <div className="space-x-8 hidden md:flex text-base">
           <Link to="/" className="hover:text-quadcore-hoverText">
@@ -41,7 +43,7 @@ const Header = () => {
           href="tel:+919087654321"
           className="flex items-center gap-2 hover:text-quadcore-hoverText hover:cursor-pointer"
         >
-          <Phone className="w-4 h-4 mt-1" />
+          <Phone className="w-4 h-4 mt-0.5" />
           <span>+91 90876 54321</span>
         </a>
       </nav>

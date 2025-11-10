@@ -5,20 +5,20 @@ const AboutPage = () => {
   return (
     <>
       <main className="w-full">
-        <section className="mt-20 py-6">
-          <div className="max-w-screen-xl mx-auto px-8">
+        <section className="min-w-full bg-quadcore-lightBackground mt-20 py-6">
+          <div className="px-4">
             <div className="flex flex-col items-center text-center py-12 space-y-4">
-              <h1 className="text-5xl text-quadcore-primary font-bold text-center">
+              <h1 className="text-4xl md:text-5xl text-quadcore-primary font-bold text-center">
                 About{" "}
                 <span className="text-quadcore-accent">Quadcore Infra</span>
               </h1>
-              <p className="text-lg text-center leading-relaxed w-[800px] text-quadcore-muted">
+              <p className="text-lg text-center leading-relaxed max-w-2xl text-quadcore-muted">
                 With years of expertise in construction and interior design,
                 we've built a reputation for delivering excellence, innovation,
                 and reliability in every project we undertake.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-6">
               <div className="space-y-6 text-pretty">
                 <h2 className="text-3xl font-bold text-quadcore-primary">
                   Who We Are
@@ -57,13 +57,13 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-        <section className="py-6">
-          <div className="max-w-screen-xl mx-auto px-8">
+        <section className="py-6 bg-quadcore-sectionBg">
+          <div className="px-4">
             <div className="flex flex-col items-center text-center py-12 space-y-4">
-              <h2 className="text-5xl font-bold text-quadcore-primary">
+              <h2 className="text-4xl md:text-5xl font-bold text-quadcore-primary">
                 Our Core Values
               </h2>
-              <div className="grid grid-cols-4 gap-8 py-12 mb-6">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-6 py-6">
                 {coreValueCards.map((card) => {
                   return <Card key={card?.id} cardDetails={card} />;
                 })}
