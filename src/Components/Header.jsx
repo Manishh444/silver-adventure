@@ -62,7 +62,7 @@ const Header = () => {
               onClick={() => setIsOpen(false)}
               to="/"
               className="hover:text-quadcore-hoverText">
-              Home
+              Home 
             </Link>
             <Link
               onClick={() => setIsOpen(false)}
