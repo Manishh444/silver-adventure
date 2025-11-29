@@ -32,11 +32,11 @@ export const serviceCards = [
   {
     id: 3,
     icon: Wrench,
-    title: "Renovation & Remodeling",
+    title: "Real Estate",
     description: "Breathe new life into existing structures",
     features: [
-      "Kitchen Remodeling",
-      "Bathroom Renovation",
+      "Farmland Development",
+      "Home Renovation",
       "Office Makeovers",
       "Heritage Restoration",
       "Energy Efficiency Upgrades",
