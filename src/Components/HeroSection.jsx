@@ -19,7 +19,7 @@ const HeroSection = () => {
           <div className="pr-4">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-quadcore-lightBackground flex flex-col">
               Building Dreams,
-              <span className="text-[#FF8001]">Designing Futures</span>
+              <span className="text-[#ff7a00]">Designing Futures</span>
             </h1>
           </div>
           <p className="text-[#E3E7E0] text-lg md:text-xl pr-4 md:min-w-md lg:max-w-2xl">

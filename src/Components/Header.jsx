@@ -1,46 +1,100 @@
 import React, { useState } from "react";
 import logo from "../assets/company-logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Common animation classes for menu links
+  const linkBase =
+    "transition-all duration-300 transform hover:animate-slideUpZoom";
+
+  const activeClass = "text-quadcoreActive font-semibold";
+
   return (
-    <header className="bg-quadcore-lightBackground text-sm px-4 py-4 h-20 shadow-md flex items-center justify-between fixed top-0 w-full z-50">
-      {/* Main nav container */}
+    <header className="bg-[#F5F2E7] text-sm px-4 py-4 h-20 shadow-md flex items-center justify-between fixed top-0 w-full z-50">
       <nav className="flex justify-between w-full items-center text-quadcore-primary font-medium">
         {/* Logo */}
-        <div>
-          <Link to="/">
+        <div className="w-40 h-20 overflow-hidden">
+          <NavLink to="/">
             <img
               src={logo}
               alt="QuadCoreInfra Logo"
-              className="w-20 h-auto hover:cursor-pointer"
+              className="object-center object-cover w-full h-full hover:cursor-pointer"
             />
-          </Link>
+          </NavLink>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-base">
-          <Link to="/" className="hover:text-quadcore-hoverText">
+        <div className="hidden md:flex space-x-8 text-lg">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `transition-all duration-200 
+              ${
+                isActive
+                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
+                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
+              }`
+            }>
             Home
-          </Link>
-          <Link to="/about" className="hover:text-quadcore-hoverText">
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `transition-all duration-200 
+              ${
+                isActive
+                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
+                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
+              }`
+            }>
             About Us
-          </Link>
-          <Link to="/services" className="hover:text-quadcore-hoverText">
+          </NavLink>
+
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              `transition-all duration-200 
+              ${
+                isActive
+                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
+                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
+              }`
+            }>
             Services
-          </Link>
-          <Link to="/work" className="hover:text-quadcore-hoverText">
+          </NavLink>
+
+          <NavLink
+            to="/work"
+            className={({ isActive }) =>
+              `transition-all duration-200 
+              ${
+                isActive
+                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
+                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
+              }`
+            }>
             Our Work
-          </Link>
-          <Link to="/contact" className="hover:text-quadcore-hoverText">
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `transition-all duration-200 
+              ${
+                isActive
+                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
+                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
+              }`
+            }>
             Contact
-          </Link>
+          </NavLink>
         </div>
 
-        {/* Phone Number (always visible) */}
+        {/* Phone Number */}
         <a
           href="tel:+919087654321"
           className="hidden md:flex items-center gap-2 hover:text-quadcore-hoverText">
@@ -48,46 +102,70 @@ const Header = () => {
           <span>+91 90876 54321</span>
         </a>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Toggle */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </nav>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown */}
       {isOpen && (
         <div className="absolute top-20 left-0 w-full bg-quadcore-lightBackground shadow-md md:hidden animate-slideDown">
           <div className="flex flex-col items-start px-6 py-4 space-y-4 text-base">
-            <Link
-              onClick={() => setIsOpen(false)}
+            <NavLink
               to="/"
-              className="hover:text-quadcore-hoverText">
-              Home 
-            </Link>
-            <Link
               onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${
+                  isActive ? activeClass : "hover:text-quadcore-hoverText"
+                }`
+              }>
+              Home
+            </NavLink>
+
+            <NavLink
               to="/about"
-              className="hover:text-quadcore-hoverText">
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${
+                  isActive ? activeClass : "hover:text-quadcore-hoverText"
+                }`
+              }>
               About Us
-            </Link>
-            <Link
-              onClick={() => setIsOpen(false)}
+            </NavLink>
+
+            <NavLink
               to="/services"
-              className="hover:text-quadcore-hoverText">
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${
+                  isActive ? activeClass : "hover:text-quadcore-hoverText"
+                }`
+              }>
               Services
-            </Link>
-            <Link
-              onClick={() => setIsOpen(false)}
+            </NavLink>
+
+            <NavLink
               to="/work"
-              className="hover:text-quadcore-hoverText">
-              Our Work
-            </Link>
-            <Link
               onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${
+                  isActive ? activeClass : "hover:text-quadcore-hoverText"
+                }`
+              }>
+              Our Work
+            </NavLink>
+
+            <NavLink
               to="/contact"
-              className="hover:text-quadcore-hoverText">
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${
+                  isActive ? activeClass : "hover:text-quadcore-hoverText"
+                }`
+              }>
               Contact
-            </Link>
+            </NavLink>
 
             <a
               href="tel:+919087654321"

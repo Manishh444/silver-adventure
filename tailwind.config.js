@@ -15,7 +15,17 @@ export default {
           bgIcon: "#E0F2F1",
           hoverText: "#235C4A",
           footerText: "#CED7D0",
+          quadcoreActive: "#ff7a00", // bright orange highlight
         },
+      },
+      keyframes: {
+        slideUpZoom: {
+          "0%": { transform: "translateY(0) scale(1)" },
+          "100%": { transform: "translateY(-3px) scale(1.1)" },
+        },
+      },
+      animation: {
+        slideUpZoom: "slideUpZoom 0.25s ease-out forwards",
       },
     },
   },
