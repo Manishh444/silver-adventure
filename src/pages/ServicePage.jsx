@@ -7,8 +7,8 @@ const ServicePage = () => {
   return (
     <>
       <main className="w-full">
-        <section className="min-w-full bg-quadcore-lightBackground mt-20 py-6">
-          <div className="px-4">
+        <section className="min-w-full bg-quadcore-lightBackground  py-6">
+          <div className="px-4 mt-10">
             <div className="flex flex-col items-center text-center py-12 space-y-4">
               <h1 className="text-4xl md:text-5xl text-quadcore-primary font-bold text-center">
                 Our <span className="text-quadcore-accent">Services</span>

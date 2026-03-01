@@ -14,15 +14,15 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="w-full py-14 bg-quadcore-accent text-quadcore-footerText">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-6 border-b border-[#A5B9AE] pb-10">
+    <footer className="w-full py-8 bg-quadcore-accent text-quadcore-footerText">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 border-b border-[#A5B9AE] pb-10">
         {/* 1. Logo + About */}
         <div className="space-y-4 animate-fadeUp">
           <Link to="/">
             <img
               src={logo}
               alt="Company Logo"
-              className="w-32 hover:scale-105 transition-all duration-300"
+              className="w-64 hover:scale-100 transition-all duration-300"
             />
           </Link>
 
@@ -34,25 +34,26 @@ const Footer = () => {
           {/* Social icons */}
           <div className="flex gap-6">
             <a
-              href="#"
+              href="https://www.facebook.com/share/1FiD6sCsBu/?mibextid=wwXIfr"
               className="hover:text-[#FF8001] transition-all hover:scale-110">
               <Facebook className="w-5 h-5" />
             </a>
             <a
-              href="#"
-              className="hover:text-[#FF8001] transition-all hover:scale-110">
+              href="https://www.instagram.com/quadcore_infra/"
+              target="_blank"
+              className="hover:text-[#FF8001] transition-all  hover:scale-110">
               <Instagram className="w-5 h-5" />
             </a>
-            <a
+            {/* <a
               href="#"
               className="hover:text-[#FF8001] transition-all hover:scale-110">
               <Twitter className="w-5 h-5" />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="#"
               className="hover:text-[#FF8001] transition-all hover:scale-110">
               <Linkedin className="w-5 h-5" />
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -92,7 +93,7 @@ const Footer = () => {
         </div>
 
         {/* 3. Services */}
-        <div className="space-y-4 animate-fadeUp-delayed-2">
+        {/* <div className="space-y-4 animate-fadeUp-delayed-2">
           <h3 className="text-lg font-bold text-quadcore-lightBackground">
             Services
           </h3>
@@ -102,7 +103,7 @@ const Footer = () => {
             <li className="hover:text-[#FF8001]">Interior Design</li>
             <li className="hover:text-[#FF8001]">Project Management</li>
           </ul>
-        </div>
+        </div> */}
 
         {/* 4. Contact Info */}
         <div className="space-y-4 animate-fadeUp-delayed-3">
@@ -111,14 +112,15 @@ const Footer = () => {
           </h3>
           <ul className="space-y-4 text-base text-pretty">
             <li className="flex gap-3">
-              <MapPin className="w-5 h-5 mt-1" />
-              123 Construction Avenue, Building District, Mumbai – 400001
+              <MapPin className="w-12 h-15 mt-1" />
+              Shri Hari Sadan #1003, 2nd floor 8th main,14th cross, Near ICICI
+              Bank Judical Layout, GKVK Post, B'lore – 560065
             </li>
 
             <li className="flex gap-3">
               <Phone className="w-5 h-5 mt-1" />
               <a href="tel:+919087654321" className="hover:text-[#FF8001]">
-                +91 90876 54321
+                +91 9900064128
               </a>
             </li>
 
@@ -133,8 +135,8 @@ const Footer = () => {
 
             <li className="flex gap-3">
               <Clock className="w-5 h-5 mt-1" />
-              Mon–Sat: 10 AM – 7 PM
-              <br /> Sunday: Closed
+              Mon–Fri: 10 AM – 6 PM IST
+              <br /> Sat - Sun: 10 AM – 6 PM IST (only walk -in appointments)
             </li>
           </ul>
         </div>

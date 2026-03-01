@@ -5,58 +5,59 @@ const AboutPage = () => {
   return (
     <>
       <main className="w-full">
-        <section className="min-w-full bg-quadcore-lightBackground mt-20 py-6">
-          <div className="px-4">
+        <section className="min-w-full bg-quadcore-lightBackground py-6">
+          <div className="px-4 mt-10">
             <div className="flex flex-col items-center text-center py-12 space-y-4">
               <h1 className="text-4xl md:text-5xl text-quadcore-primary font-bold text-center">
                 About{" "}
                 <span className="text-quadcore-accent">Quadcore Infra</span>
               </h1>
               <p className="text-lg text-center leading-relaxed max-w-2xl text-quadcore-muted">
-                With years of expertise in construction and interior design,
-                we've built a reputation for delivering excellence, innovation,
-                and reliability in every project we undertake.
+                Quadcore is a multidisciplinary architecture and design studio
+                redefining how spaces connect people, nature, and purpose
+                through thoughtful and sustainable design.
               </p>
             </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-6">
               <div className="space-y-6 text-pretty">
                 <h2 className="text-3xl font-bold text-quadcore-primary">
                   Who We Are
                 </h2>
                 <p className="text-base text-quadcore-muted">
-                  Quadcore Infra is a leading construction and interior design
-                  company dedicated to transforming spaces into extraordinary
-                  environments. Our team of experienced professionals brings
-                  together creativity, technical expertise, and a commitment to
-                  excellence.
+                  Quadcore Infra is a design-led architecture and construction
+                  studio specializing in sustainable yet refined architectural,
+                  interior, and landscape solutions. We function as both a
+                  design studio and a construction company, ensuring seamless
+                  execution from concept to completion.
                 </p>
                 <p className="text-base text-quadcore-muted">
-                  From residential projects to large-scale commercial
-                  developments, we handle every aspect of construction and
-                  design with meticulous attention to detail and a focus on
-                  sustainable practices.
+                  Our work focuses on creating spaces that are contextual,
+                  functional, and timeless—balancing aesthetics, sustainability,
+                  and craftsmanship.
                 </p>
               </div>
+
               <div className="space-y-4 text-pretty">
                 <h2 className="text-3xl font-bold text-quadcore-primary">
                   Our Approach
                 </h2>
                 <p className="text-base text-quadcore-muted">
-                  We believe in a collaborative approach that puts our clients
-                  at the center of everything we do. By combining innovative
-                  design solutions with proven construction methodologies, we
-                  ensure projects are completed on time, within budget, and to
-                  the highest standards.
+                  We believe true luxury lies in sustainability. Our approach is
+                  rooted in contextual relevance, responsible material choices,
+                  and energy- efficient design strategies that enhance
+                  well-being and respect nature.
                 </p>
                 <p className="text-base text-quadcore-muted">
-                  Our commitment to sustainability and quality has earned us the
-                  trust of numerous clients across residential, commercial, and
-                  industrial sectors.
+                  By integrating architecture, interiors, and landscape design,
+                  we create harmonious spaces that are visionary, purposeful,
+                  and built to stand the test of time.
                 </p>
               </div>
             </div>
           </div>
         </section>
+
         <section className="py-6 bg-quadcore-sectionBg">
           <div className="px-4">
             <div className="flex flex-col items-center text-center py-12 space-y-4">

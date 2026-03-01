@@ -4,23 +4,46 @@ import { useFormik } from "formik";
 import Button from "../Components/Button";
 
 const ContactPage = () => {
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      subject: "",
-      phone: "",
-      message: "",
-    },
-  });
+const formik = useFormik({
+  initialValues: {
+    name: "",
+    email: "",
+    subject: "",
+    phone: "",
+    message: "",
+  },
+  onSubmit: async (values, { resetForm }) => {
+    try {
+      const res = await fetch(
+        "https://f0mvlrtzl2.execute-api.us-east-1.amazonaws.com/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        }
+      );
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message);
+      }
+
+      alert("Message sent successfully");
+      resetForm();
+    } catch (err) {
+      alert("Failed to send message");
+    }
+  },
+});
 
   console.log(formik);
 
   return (
     <>
       <main className="w-full">
-        <section className="bg-quadcore-lightBackground mt-20 py-6">
-          <div className="px-4 sm:px-6 lg:px-8">
+        <section className="bg-quadcore-lightBackground  py-6">
+          <div className="px-4 mt-10 sm:px-6 lg:px-8">
             {/* Heading Section */}
             <div className="flex flex-col items-center text-center py-12 space-y-4">
               <h1 className="text-4xl md:text-5xl text-quadcore-primary font-bold">
@@ -48,6 +71,7 @@ const ContactPage = () => {
               <div className="hidden md:block border-l border-gray-300"></div>
 
               {/* Send Message Section */}
+              
               <div className="md:w-1/2 h-min shadow-sm rounded-md space-y-8">
                 <h2 className="text-2xl sm:text-3xl text-quadcore-primary font-bold">
                   Send Us a Message
@@ -103,8 +127,7 @@ const ContactPage = () => {
                     cols="30"
                     rows="4"
                     placeholder="Message"
-                    className="placeholder-quadcore-accent border rounded-md px-2 py-3 focus:outline-quadcore-primary w-full"
-                  ></textarea>
+                    className="placeholder-quadcore-accent border rounded-md px-2 py-3 focus:outline-quadcore-primary w-full"></textarea>
 
                   <Button
                     type="submit"

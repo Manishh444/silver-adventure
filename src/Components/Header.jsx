@@ -1,22 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/company-logo.png";
 import { NavLink } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Common animation classes for menu links
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) setIsScrolled(true);
+      else setIsScrolled(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const linkBase =
     "transition-all duration-300 transform hover:animate-slideUpZoom";
 
   const activeClass = "text-quadcoreActive font-semibold";
 
   return (
-    <header className="bg-[#F5F2E7] text-sm px-4 py-4 h-20 shadow-md flex items-center justify-between fixed top-0 w-full z-50">
-      <nav className="flex justify-between w-full items-center text-quadcore-primary font-medium">
-        {/* Logo */}
-        <div className="w-40 h-20 overflow-hidden">
+    <header
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[90%] md:w-[95%] rounded-2xl shadow-lg backdrop-blur-xl border border-white/30 px-6 py-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-[#F5F2E7]/100" : "bg-[#F5F2E7]/100"
+      }`}>
+      <nav className="flex justify-between items-center text-quadcore-primary font-medium">
+        <div className="w-32 h-16 overflow-hidden">
           <NavLink to="/">
             <img
               src={logo}
@@ -28,78 +39,34 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 text-lg">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `transition-all duration-200 
-              ${
-                isActive
-                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
-                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
-              }`
-            }>
-            Home
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `transition-all duration-200 
-              ${
-                isActive
-                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
-                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
-              }`
-            }>
-            About Us
-          </NavLink>
-
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              `transition-all duration-200 
-              ${
-                isActive
-                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
-                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
-              }`
-            }>
-            Services
-          </NavLink>
-
-          <NavLink
-            to="/work"
-            className={({ isActive }) =>
-              `transition-all duration-200 
-              ${
-                isActive
-                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
-                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
-              }`
-            }>
-            Our Work
-          </NavLink>
-
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `transition-all duration-200 
-              ${
-                isActive
-                  ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
-                  : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
-              }`
-            }>
-            Contact
-          </NavLink>
+          {[
+            { to: "/", label: "Home" },
+            { to: "/about", label: "About Us" },
+            { to: "/services", label: "Services" },
+            { to: "/work", label: "Our Work" },
+            { to: "/contact", label: "Contact" },
+          ].map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `transition-all duration-200 ${
+                  isActive
+                    ? "text-orange-500 underline underline-offset-4 decoration-orange-500 scale-105 -translate-y-0.5"
+                    : "text-black hover:text-orange-500 hover:underline hover:underline-offset-4 hover:decoration-orange-500 hover:scale-105 hover:-translate-y-0.5"
+                }`
+              }>
+              {link.label}
+            </NavLink>
+          ))}
         </div>
 
-        {/* Phone Number */}
+        {/* Phone */}
         <a
           href="tel:+919087654321"
           className="hidden md:flex items-center gap-2 hover:text-quadcore-hoverText">
           <Phone className="w-4 h-4" />
-          <span>+91 90876 54321</span>
+          <span>+91 9900064128</span>
         </a>
 
         {/* Mobile Menu Toggle */}
@@ -110,68 +77,33 @@ const Header = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="absolute top-20 left-0 w-full bg-quadcore-lightBackground shadow-md md:hidden animate-slideDown">
-          <div className="flex flex-col items-start px-6 py-4 space-y-4 text-base">
-            <NavLink
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `${linkBase} ${
-                  isActive ? activeClass : "hover:text-quadcore-hoverText"
-                }`
-              }>
-              Home
-            </NavLink>
-
-            <NavLink
-              to="/about"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `${linkBase} ${
-                  isActive ? activeClass : "hover:text-quadcore-hoverText"
-                }`
-              }>
-              About Us
-            </NavLink>
-
-            <NavLink
-              to="/services"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `${linkBase} ${
-                  isActive ? activeClass : "hover:text-quadcore-hoverText"
-                }`
-              }>
-              Services
-            </NavLink>
-
-            <NavLink
-              to="/work"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `${linkBase} ${
-                  isActive ? activeClass : "hover:text-quadcore-hoverText"
-                }`
-              }>
-              Our Work
-            </NavLink>
-
-            <NavLink
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `${linkBase} ${
-                  isActive ? activeClass : "hover:text-quadcore-hoverText"
-                }`
-              }>
-              Contact
-            </NavLink>
+        <div className="mt-4 w-full bg-white/90 backdrop-blur-xl rounded-xl shadow-md md:hidden animate-slideDown p-4">
+          <div className="flex flex-col items-start space-y-4 text-base">
+            {[
+              { to: "/", label: "Home" },
+              { to: "/about", label: "About Us" },
+              { to: "/services", label: "Services" },
+              { to: "/work", label: "Our Work" },
+              { to: "/contact", label: "Contact" },
+            ].map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `${linkBase} ${
+                    isActive ? activeClass : "hover:text-quadcore-hoverText"
+                  }`
+                }>
+                {link.label}
+              </NavLink>
+            ))}
 
             <a
               href="tel:+919087654321"
               className="flex items-center gap-2 hover:text-quadcore-hoverText">
               <Phone className="w-4 h-4" />
-              <span>+91 90876 54321</span>
+              <span>+91 9900064128</span>
             </a>
           </div>
         </div>
