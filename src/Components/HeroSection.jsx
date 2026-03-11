@@ -3,7 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import Button from "./Button";
 
-const images = ["/hero.webp", "/residencial.webp", "/villa.webp"];
+
+const heroImages = [
+  "/office/01-RECEPTION V-1.COVER PIC.webp",
+"/office/02.COVER PIC.webp",
+"/office/02.webp",
+"/office/5.webp"
+];
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
@@ -11,7 +17,7 @@ const HeroSection = () => {
   // Image carousel logic
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+      setCurrent((prev) => (prev + 1) % heroImages.length);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -54,11 +60,11 @@ const HeroSection = () => {
 
       {/* RIGHT: Image Carousel with Gradient Merge */}
       <div className="relative overflow-hidden">
-        {/* Images */}
+        {/* heroImages */}
         <AnimatePresence>
           <motion.img
-            key={images[current]}
-            src={images[current]}
+            key={heroImages[current]}
+            src={heroImages[current]}
             alt="Project showcase"
             className="absolute inset-0 w-full h-full object-cover"
             initial={{ opacity: 0, scale: 1.05 }}

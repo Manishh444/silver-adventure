@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/company-logo.png";
+import logo from "../assets/company-logo.webp";
 import { NavLink } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
 

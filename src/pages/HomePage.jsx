@@ -5,6 +5,7 @@ import Featured from "./HomeSections/Featured";
 import Testimonial from "./HomeSections/Testimonial";
 import Ready from "./HomeSections/Ready";
 import PackagesSection from "../Components/TurnKeyPackage";
+import InteriorPackageCard from "@/Components/InteriorPackages";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <HeroSection />
       <WhyUs />
       <PackagesSection />
+      <InteriorPackageCard />
       <Featured />
       <Testimonial />
       {/* <Ready /> */}

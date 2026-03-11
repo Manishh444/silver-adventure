@@ -1,4 +1,4 @@
-import whatsappIcon from "../assets/whatsapp-icon.png";
+import whatsappIcon from "../assets/whatsapp-icon.webp";
 // import InstaIcon from "../assets/insta.jpg";
 /**
  * WhatsApp Floating Button Component
