@@ -1,47 +1,81 @@
-import React from "react";
-import heroImage from "../assets/heroImage.png";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+
+
+const heroImages = [
+  "/office/01-RECEPTION V-1.COVER PIC.webp",
+"/office/02.COVER PIC.webp",
+"/office/02.webp",
+"/office/5.webp"
+];
 
 const HeroSection = () => {
+  const [current, setCurrent] = useState(0);
+
+  // Image carousel logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="#" className="min-w-full mt-20">
-      <div className="relative min-h-dvh md:max-h-dvh">
-        <img
-          src={heroImage}
-          alt="Hero Section Image"
-          className="min-w-full min-h-dvh md:max-h-screen m-0 p-0 z-0"
-        />
-        <div className="absolute top-0 z-10 bg-gradient-to-r from-[#235C49F2] via-[#235C49D9] to-[#235C49BF] opacity-80 min-w-full h-full"></div>
-      </div>
-      <div className="px-4">
-        <div className="absolute z-20 top-32 sm:top-40 lg:top-60 flex flex-col justify-center leading-loose space-y-6">
-          <div className="pr-4">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-quadcore-lightBackground flex flex-col">
-              Building Dreams,
-              <span className="text-[#FF8001]">Designing Futures</span>
-            </h1>
-          </div>
-          <p className="text-[#E3E7E0] text-lg md:text-xl pr-4 md:min-w-md lg:max-w-2xl">
-            Expert construction and interior design services that transform your
-            vision into reality. From concept to completion, we deliver
-            excellence.
-          </p>
-          <div className="flex gap-2">
-            <Button
-              className="px-2 bg-[#FF8001] rounded-md hover:cursor-default"
-              spanClass="text-white text-sm"
-              text="Get Free Quote &rarr;"
+    <section className="min-h-dvh grid grid-cols-1 md:grid-cols-2">
+      {/* LEFT: Content */}
+      <div className="flex items-center bg-[#00441b] px-8 md:px-10">
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="max-w-xl space-y-6">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mt-9">
+            Building Dreams,
+            <span className="block text-[#FF8001] mt-3">Designing Futures</span>
+          </h1>
+
+          <p className="text-[#E3E7E0] text-lg md:text-xl min-h-[96px]">
+            <Typewriter
+              words={[
+                "Expert construction and interior design services that transform your vision into reality. From concept to completion, we deliver excellence.",
+              ]}
+              loop={1}
+              cursor
+              cursorStyle="|"
+              typeSpeed={35}
             />
-            <Link to="/contact">
-              <Button
-                className="px-2 rounded-md bg-white hover:bg-[#FF8001] group"
-                spanClass="invisible text-white text-sm group-hover:visible "
-                text="Contact Us"
-              />
-            </Link>
-          </div>
-        </div>
+          </p>
+
+          <a href="tel:+919900064128">
+            <Button
+              className="px-6 py-3 bg-[#FF8001] text-white rounded-md hover:bg-[#e36f00] transition"
+              text="Contact Us"
+            />
+          </a>
+        </motion.div>
+      </div>
+
+      {/* RIGHT: Image Carousel with Gradient Merge */}
+      <div className="relative overflow-hidden">
+        {/* heroImages */}
+        <AnimatePresence>
+          <motion.img
+            key={heroImages[current]}
+            src={heroImages[current]}
+            alt="Project showcase"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
+
+        {/* Gradient Bridge (Desktop Only) */}
+        <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-[#00441b] via-[#00441b]/10 to-transparent pointer-events-none" />
       </div>
     </section>
   );

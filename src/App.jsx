@@ -4,6 +4,7 @@ import Footer from "./Components/Footer";
 import MainSection from "./Components/MainSection";
 
 function App() {
+  const [showEstimator, setShowEstimator] = useState(false);
   return (
     <>
       

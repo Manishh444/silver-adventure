@@ -67,8 +67,8 @@ const Card = ({ cardDetails }) => {
   const IconComponent = cardDetails?.icon;
   return (
     <div className="h-auto border bg-white rounded-md p-6 space-y-2 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-      <span className="bg-[#FFF2EA] rounded-full p-5 flex items-center justify-center mb-2">
-        {IconComponent && <IconComponent className="text-[#FF8001] w-6 h-6" />}
+      <span className="bg-[#ffc8a6] rounded-full p-5 flex items-center justify-center mb-2">
+        {IconComponent && <IconComponent className="text-[#F97921] w-6 h-6" />}
       </span>
       <p className="font-bold text-xl text-quadcore-primary">
         {cardDetails.title}

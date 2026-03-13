@@ -1,12 +1,11 @@
 import React from "react";
 import Card, { coreValueCards } from "../Components/Card";
-
 const AboutPage = () => {
   return (
     <>
       <main className="w-full">
-        <section className="min-w-full bg-quadcore-lightBackground mt-20 py-6">
-          <div className="px-4">
+        <section className="min-w-full bg-quadcore-lightBackground py-6">
+          <div className="px-4 mt-10">
             <div className="flex flex-col items-center text-center py-12 space-y-4">
               <h1 className="text-4xl md:text-5xl text-quadcore-primary font-bold text-center">
                 About{" "}
@@ -18,6 +17,7 @@ const AboutPage = () => {
                 and reliability in every project we undertake.
               </p>
             </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-6">
               <div className="space-y-6 text-pretty">
                 <h2 className="text-3xl font-bold text-quadcore-primary">
@@ -37,6 +37,7 @@ const AboutPage = () => {
                   sustainable practices.
                 </p>
               </div>
+
               <div className="space-y-4 text-pretty">
                 <h2 className="text-3xl font-bold text-quadcore-primary">
                   Our Approach
@@ -57,6 +58,7 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
         <section className="py-6 bg-quadcore-sectionBg">
           <div className="px-4">
             <div className="flex flex-col items-center text-center py-12 space-y-4">

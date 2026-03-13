@@ -6,7 +6,7 @@ export const contactCards = [
     id: 1,
     icon: Phone,
     title: "Phone",
-    value: "+91 98765 43210",
+    value: "+91 9900064128",
     href: "tel:+919876543210",
   },
   {
@@ -20,14 +20,8 @@ export const contactCards = [
     id: 3,
     icon: MapPin,
     title: "Address",
-    value: "123 Construction Ave, Business District, City - 400001",
-    href: null,
-  },
-  {
-    id: 4,
-    icon: Clock,
-    title: "Working Hours",
-    value: "Mon - Sat: 9:00 AM - 6:00 PM",
+    value:
+      "Shri Hari Sadan #1003, 2nd floor 8th main,14th cross, Near ICICI Bank Judical Layout, GKVK Post, B'lore – 560065",
     href: null,
   },
 ];
@@ -51,8 +45,7 @@ const ContactCard = ({ cardDetails }) => {
         {cardDetails?.href ? (
           <a
             href={cardDetails.href}
-            className="text-quadcore-accent hover:underline break-all"
-          >
+            className="text-quadcore-accent hover:underline break-all">
             {cardDetails?.value}
           </a>
         ) : (

@@ -4,15 +4,19 @@ import WhyUs from "./HomeSections/WhyUs";
 import Featured from "./HomeSections/Featured";
 import Testimonial from "./HomeSections/Testimonial";
 import Ready from "./HomeSections/Ready";
+import PackagesSection from "../Components/TurnKeyPackage";
+import InteriorPackageCard from "@/Components/InteriorPackages";
 
 const HomePage = () => {
   return (
     <main className="w-full">
       <HeroSection />
       <WhyUs />
+      <PackagesSection />
+      <InteriorPackageCard />
       <Featured />
       <Testimonial />
-      <Ready />
+      {/* <Ready /> */}
     </main>
   );
 };

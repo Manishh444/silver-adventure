@@ -1,0 +1,113 @@
+[
+  {
+    "id": "interior-essential",
+    "title": "Essential Interior",
+    "price": "Rs 1,299/Sq.Ft.",
+    "color": "#ff7a00",
+    "sections": [
+      {
+        "id": "living",
+        "title": "Living Room",
+        "rows": [
+          ["TV Unit", "Basic laminate finish"],
+          ["Sofa", "3 Seater Sofa"],
+          ["False Ceiling", "Standard gypsum ceiling"],
+          ["Wall Paint", "Premium emulsion paint"]
+        ]
+      },
+      {
+        "id": "kitchen",
+        "title": "Kitchen",
+        "rows": [
+          ["Cabinets", "Laminate finish cabinets"],
+          ["Countertop", "Granite countertop"],
+          ["Sink", "Stainless steel sink"],
+          ["Backsplash", "Ceramic tiles"]
+        ]
+      },
+      {
+        "id": "bedroom",
+        "title": "Bedroom",
+        "rows": [
+          ["Wardrobe", "2-door laminate wardrobe"],
+          ["Bed", "Queen size bed frame"],
+          ["Side Tables", "Basic bedside tables"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "interior-premium",
+    "title": "Premium Interior",
+    "price": "Rs 1,899/Sq.Ft.",
+    "color": "#ff7a00",
+    "sections": [
+      {
+        "id": "living",
+        "title": "Living Room",
+        "rows": [
+          ["TV Unit", "High gloss finish unit"],
+          ["Sofa", "Luxury fabric sofa"],
+          ["False Ceiling", "Designer layered gypsum ceiling"],
+          ["Lighting", "LED profile lighting"]
+        ]
+      },
+      {
+        "id": "kitchen",
+        "title": "Kitchen",
+        "rows": [
+          ["Cabinets", "Acrylic finish cabinets"],
+          ["Countertop", "Quartz countertop"],
+          ["Sink", "Premium stainless steel sink"],
+          ["Backsplash", "Designer tiles"]
+        ]
+      },
+      {
+        "id": "bedroom",
+        "title": "Bedroom",
+        "rows": [
+          ["Wardrobe", "Sliding door wardrobe"],
+          ["Bed", "Hydraulic storage bed"],
+          ["Side Tables", "Premium bedside tables"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "interior-luxury",
+    "title": "Luxury Interior",
+    "price": "Rs 2,499/Sq.Ft.",
+    "color": "#ff7a00",
+    "sections": [
+      {
+        "id": "living",
+        "title": "Living Room",
+        "rows": [
+          ["TV Unit", "Designer panel TV unit"],
+          ["Sofa", "Italian leather sofa"],
+          ["False Ceiling", "Custom designer ceiling"],
+          ["Lighting", "Smart ambient lighting"]
+        ]
+      },
+      {
+        "id": "kitchen",
+        "title": "Kitchen",
+        "rows": [
+          ["Cabinets", "PU finish cabinets"],
+          ["Countertop", "Premium quartz countertop"],
+          ["Sink", "Imported sink with mixer"],
+          ["Backsplash", "Glass designer backsplash"]
+        ]
+      },
+      {
+        "id": "bedroom",
+        "title": "Bedroom",
+        "rows": [
+          ["Wardrobe", "Walk-in wardrobe"],
+          ["Bed", "King size designer bed"],
+          ["Side Tables", "Luxury bedside tables"]
+        ]
+      }
+    ]
+  }
+]

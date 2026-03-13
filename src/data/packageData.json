@@ -1,0 +1,316 @@
+[
+  {
+  "title": "Essential Package",
+  "price": "Rs 1,899/Sq.Ft.",
+  "color": "#2f6f4e",
+  "sections": [
+    {
+      "id": "Design",
+      "title": "Design & Drawings",
+      "rows": [
+        ["3D Building Elevation", "Included (Multiple options until finalization)"],
+        ["3D Basic Interiors", "Included"],
+        ["Excavation Layout", "Included"],
+        ["Centre Line Drawings", "Included"],
+        ["Footing Layout", "Included"],
+        ["Column Layout", "Included"],
+        ["Staircase Details", "Included"],
+        ["Shuttering Layouts", "Included"],
+        ["Slab Reinforcement Details", "Included"]
+      ]
+    },
+    {
+      "id": "Survey",
+      "title": "Survey & Investigation",
+      "rows": [
+        ["Site Survey & Markings", "Included"],
+        ["Geo-Technical Soil Investigation", "Included"]
+      ]
+    },
+    {
+      "id": "Structure",
+      "title": "Structure & Concrete Works",
+      "rows": [
+        ["Sub & Super Structure", "As per structural drawings"],
+        ["Soil Excavation & Backfilling", "Included"],
+        ["Soil Treatment", "Included"],
+        ["Footing Work", "Up to 8 ft from floor level"],
+        ["Plinth Beam & PCC", "Included"],
+        ["SSM", "3 layered SSM across periphery"],
+        ["Concrete Type", "RMC for footing & slab, hand mix for others"],
+        ["Concrete Grade", "M10 (PCC), M25 (Footing, Slab & Columns)"],
+        ["Ceiling Height", "10.5 ft including slab"]
+      ]
+    },
+    {
+      "id": "Materials",
+      "title": "Core Construction Materials",
+      "rows": [
+        ["Steel", "Meenakshi / Kamadhenu / 500 TMT equivalent"],
+        ["Cement", "Ultratech or equivalent (PPC & OPC)"],
+        ["M Sand", "Double wash (Block & Concrete works)"],
+        ["P Sand", "Double wash (Plastering)"],
+        ["Aggregates", "20mm & 40mm"]
+      ]
+    },
+    {
+      "id": "Walls",
+      "title": "Wall Construction",
+      "rows": [
+        ["Wall Type", "Hydraulic / Solid Block / Brick"],
+        ["Internal Walls", "4 inch blocks (Up to ₹32 per block)"],
+        ["External Walls", "6 inch blocks (Up to ₹36 per block)"],
+        ["Concrete Bands", "At 1m height (Internal & External)"],
+        ["Brick Walls (Optional)", "₹10 per brick (4.5\" & 9\")"]
+      ]
+    },
+    {
+      "id": "Flooring",
+      "title": "Flooring & Tiles",
+      "rows": [
+        ["Living, Dining & Bedrooms", "Granite/Tiles up to ₹50/sqft"],
+        ["Kitchen Flooring", "Granite/Tiles up to ₹50/sqft"],
+        ["Pooja Room Flooring", "Tiles up to ₹60/sqft"],
+        ["Pooja Wall Cladding", "Up to ₹70/sqft (7 ft height)"],
+        ["Parking & Balcony", "Anti-skid tiles up to ₹40/sqft"],
+        ["Staircase (Internal)", "Granite up to ₹85/sqft"],
+        ["Staircase (External)", "Granite up to ₹75/sqft"]
+      ]
+    },
+    {
+      "id": "Painting",
+      "title": "Painting Works",
+      "rows": [
+        ["Interior Painting", "JK Putty + Primer + 2 coats Asian Royal Emulsion"],
+        ["Textured Paint", "Up to 300 sqft"],
+        ["Exterior Painting", "Asian Primer + 2 coats Apex Exterior"]
+      ]
+    },
+    {
+      "id": "DoorsWindows",
+      "title": "Doors & Windows",
+      "rows": [
+        ["Main Door Frame", "Teak wood (6\"x3\") up to ₹4000/cft"],
+        ["Main Door Shutter", "Burma teak / equivalent (35mm) up to ₹4000/cft"],
+        ["Door Fixtures", "Up to ₹5000"],
+        ["Pooja Door Frame", "Teak wood (5\"x3\") up to ₹3200/cft"]
+      ]
+    }
+  ]
+},
+
+{
+  "title": "Premium Plus Package",
+  "price": "Rs 2,299/Sq.Ft.",
+  "color": "#2f6f4e",
+  "sections": [
+    {
+      "id": "Design",
+      "title": "Design & Drawings",
+      "rows": [
+        [
+          "3D Building Elevation",
+          "Included (Multiple options until finalization)"
+        ],
+        ["3D Basic Interiors", "Included"],
+        ["Excavation Layout", "Included"],
+        ["Centre Line Drawings", "Included"],
+        ["Footing Layout", "Included"],
+        ["Column Layout", "Included"],
+        ["Staircase Details", "Included"],
+        ["Shuttering Layouts", "Included"],
+        ["Slab Reinforcement Details", "Included"]
+      ]
+    },
+    {
+      "id": "Survey",
+      "title": "Survey & Investigation",
+      "rows": [
+        ["Site Survey & Markings", "Included"],
+        ["Geo-Technical Soil Investigation", "Included"]
+      ]
+    },
+    {
+      "id": "Structure",
+      "title": "Structure & Concrete Works",
+      "rows": [
+        ["Sub & Super Structure", "As per structural drawings"],
+        ["Soil Excavation & Backfilling", "Included"],
+        ["Soil Treatment", "Included"],
+        ["Footing Work", "Up to 8 ft from floor PCC"],
+        ["Plinth Beam & PCC", "Included"],
+        ["SSM", "3 layered SSM across periphery"],
+        ["Concrete Type", "RMC for footing & slab, hand mix for others"],
+        ["Concrete Grade", "M10 (PCC), M25 (Footing, Slab & Columns)"],
+        ["Ceiling Height", "10.5 ft including slab"],
+        ["Double Height Wall", "1 location (Owner choice)"]
+      ]
+    },
+    {
+      "id": "Materials",
+      "title": "Core Construction Materials",
+      "rows": [
+        ["Steel", "JSW or equivalent"],
+        ["Cement", "Birla Super / Zuari or equivalent (PPC & OPC)"],
+        ["M Sand", "Double wash (Block & Concrete works)"],
+        ["P Sand", "Double wash (Plastering)"],
+        ["Aggregates", "20mm & 40mm"]
+      ]
+    },
+    {
+      "id": "Walls",
+      "title": "Wall Construction",
+      "rows": [
+        ["Wall Type", "Hydraulic / Solid Block / Brick"],
+        ["Internal Walls", "4 inch blocks (Up to ₹40 per block)"],
+        ["External Walls", "6 inch blocks (Up to ₹46 per block)"],
+        ["Concrete Bands", "At 1m height (Internal & External)"],
+        ["Brick Walls (Optional)", "₹10 per brick (4.5\" & 9\")"]
+      ]
+    },
+    {
+      "id": "Flooring",
+      "title": "Flooring & Tiles",
+      "rows": [
+        ["Living, Dining & Bedrooms", "Granite/Tiles up to ₹85/sqft"],
+        ["Kitchen Flooring", "Granite/Tiles up to ₹80/sqft"],
+        ["Pooja Room Flooring", "Tiles up to ₹100/sqft"],
+        ["Pooja Wall Cladding", "Up to ₹110/sqft (7 ft height)"],
+        ["Parking, Balcony & Open Areas", "Anti-skid tiles up to ₹65/sqft"],
+        ["Staircase (Internal)", "Granite up to ₹120/sqft"],
+        ["Staircase (External)", "Granite up to ₹100/sqft"]
+      ]
+    },
+    {
+      "id": "Painting",
+      "title": "Painting Works",
+      "rows": [
+        [
+          "Interior Painting",
+          "Birla Wall Putty + Opus Primer + 2 coats Asian Royal Emulsion"
+        ],
+        ["Textured Paint", "Up to 300 sqft"],
+        ["Exterior Painting", "Asian Primer + 2 coats Apex Exterior"]
+      ]
+    },
+    {
+      "id": "DoorsWindows",
+      "title": "Doors & Windows",
+      "rows": [
+        ["Main Door Frame", "Burma Teak (6\"x3\") up to ₹5500/cft"],
+        ["Main Door Shutter", "Burma Teak / equivalent (35mm) up to ₹5500/cft"],
+        ["Main Door Fixtures", "Up to ₹7500"],
+        ["Pooja Door Frame", "Gana Teak (5\"x3\") up to ₹4000/cft"]
+      ]
+    }
+  ]
+},
+
+{
+  "title": "Premium Ultra Package",
+  "price": "Rs 2,499/Sq.Ft.",
+  "color": "#2f6f4e",
+  "sections": [
+    {
+      "id": "Design",
+      "title": "Design & Drawings",
+      "rows": [
+        [
+          "3D Building Elevation",
+          "Included (Multiple options until finalization)"
+        ],
+        ["3D Basic Interiors", "Included"],
+        ["Excavation Layout", "Included"],
+        ["Centre Line Drawings", "Included"],
+        ["Footing Layout", "Included"],
+        ["Column Layout", "Included"],
+        ["Staircase Details", "Included"],
+        ["Shuttering Layouts", "Included"],
+        ["Slab Reinforcement Details", "Included"]
+      ]
+    },
+    {
+      "id": "Survey",
+      "title": "Survey & Investigation",
+      "rows": [
+        ["Site Survey & Markings", "Included"],
+        ["Geo-Technical Soil Investigation", "Included"]
+      ]
+    },
+    {
+      "id": "Structure",
+      "title": "Structure & Concrete Works",
+      "rows": [
+        ["Sub & Super Structure", "As per structural drawings"],
+        ["Soil Excavation & Backfilling", "Included"],
+        ["Soil Treatment", "Included"],
+        ["Footing Work", "Up to 8 ft from floor PCC"],
+        ["Plinth Beam & PCC", "Included"],
+        ["SSM", "4 layered SSM across periphery"],
+        ["Concrete Type", "RMC for footing & slab, hand mix for others"],
+        ["Concrete Grade", "M15 (PCC), M30 (Footing), M25 (Slab & Columns)"],
+        ["Ceiling Height", "11 ft including slab"],
+        ["Double Height Wall", "1 location (Owner choice)"]
+      ]
+    },
+    {
+      "id": "Materials",
+      "title": "Core Construction Materials",
+      "rows": [
+        ["Steel", "TATA / JSW or equivalent"],
+        ["Cement", "Birla Super / JSW or equivalent (PPC & OPC)"],
+        ["M Sand", "Triple wash (Block & Concrete works)"],
+        ["P Sand", "Triple wash (Plastering)"],
+        ["Aggregates", "20mm & 40mm"]
+      ]
+    },
+    {
+      "id": "Walls",
+      "title": "Wall Construction",
+      "rows": [
+        ["Wall Type", "Hydraulic / Solid Block / Brick"],
+        ["Internal Walls", "4 inch blocks (Up to ₹32 per block)"],
+        ["External Walls", "6 inch blocks (Up to ₹36 per block)"],
+        ["Concrete Bands", "At 1m height (Internal & External)"],
+        ["Brick Walls (Optional)", "₹10 per brick (4.5\" & 9\")"]
+      ]
+    },
+    {
+      "id": "Flooring",
+      "title": "Flooring & Tiles",
+      "rows": [
+        ["Living, Dining & Bedrooms", "Granite/Tiles up to ₹220/sqft"],
+        ["Kitchen Flooring", "Granite/Tiles up to ₹180/sqft"],
+        ["Pooja Room Flooring", "Tiles up to ₹240/sqft"],
+        ["Pooja Wall Cladding", "Up to ₹260/sqft (7 ft height)"],
+        ["Parking, Balcony & Open Areas", "Anti-skid tiles up to ₹115/sqft"],
+        ["Staircase (Internal)", "Granite up to ₹200/sqft"],
+        ["Staircase (External)", "Granite up to ₹150/sqft"]
+      ]
+    },
+    {
+      "id": "Painting",
+      "title": "Painting Works",
+      "rows": [
+        [
+          "Interior Painting",
+          "2–3 coats Birla Wall Putty + Tractor Emulsion Primer + 2 coats Asian Royal Emulsion"
+        ],
+        ["Textured Paint", "Up to 300 sqft"],
+        ["Exterior Painting", "Asian Primer + 2 coats Apex Exterior"]
+      ]
+    },
+    {
+      "id": "DoorsWindows",
+      "title": "Doors & Windows",
+      "rows": [
+        ["Main Door Frame", "Burma Teak (6\"x3\") up to ₹8500/cft"],
+        ["Main Door Shutter", "Burma Teak / equivalent (35mm) up to ₹8500/cft"],
+        ["Main Door Fixtures", "Up to ₹15,000"],
+        ["Pooja Door Frame", "Teak wood (5\"x3\") up to ₹6800/cft"]
+      ]
+    }
+  ]
+}
+
+]
