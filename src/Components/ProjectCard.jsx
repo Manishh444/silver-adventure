@@ -1,8 +1,6 @@
 import { useState } from "react";
 import GalleryModal from "./GalleryModal";
-
 const ProjectCard = ({ projectCardDetails, children }) => {
-  console.log(projectCardDetails);
   const [open, setOpen] = useState(false);
 
   return (

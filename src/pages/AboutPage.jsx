@@ -1,6 +1,5 @@
 import React from "react";
 import Card, { coreValueCards } from "../Components/Card";
-
 const AboutPage = () => {
   return (
     <>
@@ -13,9 +12,9 @@ const AboutPage = () => {
                 <span className="text-quadcore-accent">Quadcore Infra</span>
               </h1>
               <p className="text-lg text-center leading-relaxed max-w-2xl text-quadcore-muted">
-                Quadcore is a multidisciplinary architecture and design studio
-                redefining how spaces connect people, nature, and purpose
-                through thoughtful and sustainable design.
+                With years of expertise in construction and interior design,
+                we've built a reputation for delivering excellence, innovation,
+                and reliability in every project we undertake.
               </p>
             </div>
 
@@ -25,16 +24,17 @@ const AboutPage = () => {
                   Who We Are
                 </h2>
                 <p className="text-base text-quadcore-muted">
-                  Quadcore Infra is a design-led architecture and construction
-                  studio specializing in sustainable yet refined architectural,
-                  interior, and landscape solutions. We function as both a
-                  design studio and a construction company, ensuring seamless
-                  execution from concept to completion.
+                  Quadcore Infra is a leading construction and interior design
+                  company dedicated to transforming spaces into extraordinary
+                  environments. Our team of experienced professionals brings
+                  together creativity, technical expertise, and a commitment to
+                  excellence.
                 </p>
                 <p className="text-base text-quadcore-muted">
-                  Our work focuses on creating spaces that are contextual,
-                  functional, and timeless—balancing aesthetics, sustainability,
-                  and craftsmanship.
+                  From residential projects to large-scale commercial
+                  developments, we handle every aspect of construction and
+                  design with meticulous attention to detail and a focus on
+                  sustainable practices.
                 </p>
               </div>
 
@@ -43,15 +43,16 @@ const AboutPage = () => {
                   Our Approach
                 </h2>
                 <p className="text-base text-quadcore-muted">
-                  We believe true luxury lies in sustainability. Our approach is
-                  rooted in contextual relevance, responsible material choices,
-                  and energy- efficient design strategies that enhance
-                  well-being and respect nature.
+                  We believe in a collaborative approach that puts our clients
+                  at the center of everything we do. By combining innovative
+                  design solutions with proven construction methodologies, we
+                  ensure projects are completed on time, within budget, and to
+                  the highest standards.
                 </p>
                 <p className="text-base text-quadcore-muted">
-                  By integrating architecture, interiors, and landscape design,
-                  we create harmonious spaces that are visionary, purposeful,
-                  and built to stand the test of time.
+                  Our commitment to sustainability and quality has earned us the
+                  trust of numerous clients across residential, commercial, and
+                  industrial sectors.
                 </p>
               </div>
             </div>
