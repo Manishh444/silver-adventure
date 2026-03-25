@@ -22,6 +22,10 @@ const acresImages = Object.values(
   import.meta.glob("@/assets/ACRES-LAYOUT-DESIGN/*.webp", { eager: true })
 ).map((img) => img.default);
 
+const commercialImages = Object.values(
+  import.meta.glob("@/assets/commercial-building/*.webp", { eager: true })
+).map((img) => img.default);
+
 export default [
   {
     id: 1,
@@ -82,5 +86,15 @@ export default [
   additionalDesc:
     "Comprehensive site planning for a residential layout including plotted development, row houses, clubhouse, sports courts, landscaping, and road infrastructure.",
   images: acresImages,
+},
+{
+  id: 7,
+  src: commercialImages[0],
+  title: "Commercial Building",
+  type: "Commercial",
+  desc: "Modern multi-storey commercial structure",
+  additionalDesc:
+    "Contemporary commercial building design with retail space at ground level and multiple floors optimized for office or rental usage, featuring clean elevation and urban planning.",
+  images: commercialImages,
 },
 ];
