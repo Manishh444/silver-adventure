@@ -24,13 +24,13 @@ const GalleryModal = ({ images = [], title, onClose }) => {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]"
+        className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999] pointer-events-auto"
         onClick={onClose}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <motion.div
-          className="relative bg-white rounded-2xl shadow-xl p-4 max-w-4xl w-full mx-4"
+          className="relative bg-white rounded-2xl shadow-xl p-4 max-w-4xl w-full mx-4 pointer-events-auto z-[10000]"
           onClick={(e) => e.stopPropagation()}
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -43,7 +43,7 @@ const GalleryModal = ({ images = [], title, onClose }) => {
             <X size={24} className="pointer-events-none" />
           </button>
           {/* Image */}
-          <div className="relative w-full h-[450px] flex items-center justify-center overflow-hidden rounded-xl">
+          <div className="relative w-full h-[450px] flex items-center justify-center overflow-hidden rounded-xl pointer-events-auto">
             <AnimatePresence mode="wait">
               <motion.img
                 key={index}
@@ -61,7 +61,7 @@ const GalleryModal = ({ images = [], title, onClose }) => {
             {images.length > 1 && (
               <button
                 onClick={prev}
-                className="absolute left-3 bg-white/80 p-2 rounded-full shadow hover:bg-white transition">
+                className="absolute left-3 bg-white/80 p-2 rounded-full shadow hover:bg-white transition pointer-events-auto z-[10001]">
                 <ChevronLeft size={30} />
               </button>
             )}
@@ -70,7 +70,7 @@ const GalleryModal = ({ images = [], title, onClose }) => {
             {images.length > 1 && (
               <button
                 onClick={next}
-                className="absolute right-3 bg-white/80 p-2 rounded-full shadow hover:bg-white transition">
+                className="absolute right-3 bg-white/80 p-2 rounded-full shadow hover:bg-white transition pointer-events-auto z-[10001]">
                 <ChevronRight size={30} />
               </button>
             )}

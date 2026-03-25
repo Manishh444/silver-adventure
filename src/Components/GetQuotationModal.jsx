@@ -57,6 +57,8 @@ export default function GetQuotationModal({
   triggerLabel,
   packages = [],
   selectedPackage = "",
+  fullWidth = false,
+  variant = "interior",
 }) {
 
   const [open, setOpen] = useState(false);
@@ -166,21 +168,26 @@ export default function GetQuotationModal({
   useEffect(() => {
     if (selectedPackage) {
       formik.setFieldValue("package", selectedPackage);
-      setStep(3);
     }
   }, [selectedPackage]);
 
+  const styles = {
+  contact:
+    "px-6 py-6  bg-[#FF8001] text-white rounded-lg hover:bg-[#e36f00] transition font-medium shadow-sm",
+
+  interior:
+    "w-full py-3 bg-[#FF8001] text-white rounded-md hover:bg-[#e36f00] transition font-semibold",
+};
   return (
     <>
       {/* TRIGGER */}
 
       <Button
-        onClick={() => setOpen(true)}
-        className="w-full text-white shadow-md hover:shadow-lg"
-        style={{ backgroundColor: "#ff7a00" }}
-      >
-        {triggerLabel}
-      </Button>
+  onClick={() => setOpen(true)}
+  className={`${styles[variant]} ${fullWidth ? "w-full" : ""}`}
+>
+  {triggerLabel}
+</Button>
 
       <Dialog open={open} onOpenChange={setOpen}>
 

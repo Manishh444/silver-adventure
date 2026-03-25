@@ -14,6 +14,14 @@ const pgImages = Object.values(
   import.meta.glob("@/assets/PG2/*.webp", { eager: true })
 ).map((img) => img.default);
 
+const likithImages = Object.values(
+  import.meta.glob("@/assets/LIKITH-lux-residential/*.webp", { eager: true })
+).map((img) => img.default);
+
+const acresImages = Object.values(
+  import.meta.glob("@/assets/ACRES-LAYOUT-DESIGN/*.webp", { eager: true })
+).map((img) => img.default);
+
 export default [
   {
     id: 1,
@@ -55,4 +63,24 @@ export default [
       "Multi-story residential complex with clubhouse, swimming pool, gym, and landscaped gardens across 2 acres.",
     images: pgImages,
   },
+  {
+  id: 5,
+  src: likithImages[0],
+  title: "Likith Luxury Residence",
+  type: "Residential",
+  desc: "Modern luxury G+3 residential elevation",
+  additionalDesc:
+    "Premium residential project featuring contemporary facade design, natural textures, ventilation blocks, and balcony landscaping with a modern aesthetic.",
+  images: likithImages,
+},
+{
+  id: 6,
+  src: acresImages[0],
+  title: "Acres Layout Design",
+  type: "Construction",
+  desc: "Residential layout planning with clubhouse & plots",
+  additionalDesc:
+    "Comprehensive site planning for a residential layout including plotted development, row houses, clubhouse, sports courts, landscaping, and road infrastructure.",
+  images: acresImages,
+},
 ];

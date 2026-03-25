@@ -83,7 +83,7 @@ export function PackageCard({ pkg, openSections, setOpenSections }) {
       className="w-full"
     >
 
-      <Card className="rounded-2xl shadow-md hover:shadow-xl transition border w-full overflow-hidden">
+      <Card className="rounded-2xl shadow-md hover:shadow-xl transition border w-full overflow-hidden flex flex-col h-full">
 
         {/* HEADER */}
 
@@ -99,7 +99,7 @@ export function PackageCard({ pkg, openSections, setOpenSections }) {
 
         </div>
 
-        <CardContent className="px-4 py-6">
+        <CardContent className="px-4 py-6 flex flex-col flex-grow">
 
           {pkg.sections.map((section) => (
 
@@ -113,7 +113,7 @@ export function PackageCard({ pkg, openSections, setOpenSections }) {
           ))}
 
           {/* QUOTATION BUTTON */}
-
+          <div className="mt-auto pt-4">
           <GetQuotationModal
             triggerLabel="Get Quotation"
             selectedPackage={pkg.title}
@@ -121,7 +121,7 @@ export function PackageCard({ pkg, openSections, setOpenSections }) {
               title: p.title,
             }))}
           />
-
+          </div>
         </CardContent>
 
       </Card>
@@ -147,10 +147,10 @@ export default function PackagesSection() {
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-          {packages.map((pkg) => (
+          {packages.map((pkg, index) => (
 
             <PackageCard
-              key={pkg.id}
+              key={index}
               pkg={pkg}
               openSections={openSections}
               setOpenSections={setOpenSections}
