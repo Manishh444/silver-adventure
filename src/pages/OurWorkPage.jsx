@@ -19,17 +19,13 @@ const OurWorkPage = () => {
               </p>
             </div>
             <div className="py-12 grid md:grid-cols-3 gap-4 md:gap-6">
-              {buildingData.map((card) => {
-                return (
-                  <>
-                    <ProjectCard projectCardDetails={card}>
-                      <p className="px-4 py-0 text-sm text-quadcore-muted">
-                        {card?.additionalDesc}
-                      </p>
-                    </ProjectCard>
-                  </>
-                );
-              })}
+              {buildingData.map((card) => (
+  <ProjectCard key={card.id} projectCardDetails={card}>
+    <p className="px-4 py-0 text-sm text-quadcore-muted">
+      {card?.additionalDesc}
+    </p>
+  </ProjectCard>
+))}
             </div>
           </div>
         </section>
