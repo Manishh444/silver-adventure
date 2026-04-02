@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const GalleryModal = ({ images = [], title, onClose }) => {
-    console.log("images from gallery modal", images);
   const [index, setIndex] = useState(0);
 
   const next = () => setIndex((prev) => (prev + 1) % images.length);
