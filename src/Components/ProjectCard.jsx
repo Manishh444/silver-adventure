@@ -1,13 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GalleryModal from "./GalleryModal";
 
 const ProjectCard = ({ projectCardDetails, children }) => {
   const [open, setOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState(""); // 🔥 NEW
 
   if (!projectCardDetails) return null;
 
   const { src, title, desc, type, images } = projectCardDetails;
+
+  // 🔥 LAZY LOAD IMAGE
+  useEffect(() => {
+    let isMounted = true;
+
+    if (src) {
+      src().then((mod) => {
+        if (isMounted) {
+          setImgSrc(mod.default);
+        }
+      });
+    }
+
+    return () => {
+      isMounted = false;
+    };
+  }, [src]);
 
   return (
     <>
@@ -24,9 +42,9 @@ const ProjectCard = ({ projectCardDetails, children }) => {
           )}
 
           {/* ✅ Image */}
-          {src && (
+          {imgSrc && (
             <img
-              src={src}
+              src={imgSrc} // ✅ FIXED
               alt={title}
               loading="lazy"
               decoding="async"
@@ -44,13 +62,11 @@ const ProjectCard = ({ projectCardDetails, children }) => {
         {/* 🔥 CONTENT */}
         <div className="px-4 pt-4 pb-4 flex flex-col gap-2">
           
-          {/* ✅ TITLE + BADGE */}
           <div className="flex items-center justify-between gap-2">
             <h3 className="font-bold text-lg text-quadcore-primary">
               {title}
             </h3>
 
-            {/* ✅ BADGE */}
             <span
               className={`text-xs text-white px-2.5 py-1 rounded-full whitespace-nowrap ${
                 type === "Residential"
@@ -66,12 +82,10 @@ const ProjectCard = ({ projectCardDetails, children }) => {
             </span>
           </div>
 
-          {/* ✅ DESCRIPTION */}
-          <p className="text-sm text-quadcore-muted leading-relaxed">
+          <p className="text-sm font-medium text-quadcore-primary mt-1">
             {desc}
           </p>
 
-          {/* ✅ EXTRA CONTENT */}
           {children && (
             <div className="text-xs text-gray-500 mt-1">
               {children}

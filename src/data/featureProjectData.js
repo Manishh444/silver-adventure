@@ -1,21 +1,26 @@
-// 🔥 AUTO LOAD ALL PROJECTS
-
+// 🔥 AUTO LOAD ALL PROJECTS (LAZY LOAD — FIXED)
 const allImages = import.meta.glob(
-  "@/assets/projects/*/*.{webp,jpg,png}",
-  { eager: true }
+  "/src/assets/projects/*/*.{webp,jpg,png}"
 );
 
 // 🧠 GROUP IMAGES BY FOLDER
 const groupedProjects = {};
 
-Object.entries(allImages).forEach(([path, module]) => {
-  const folder = path.split("/").slice(-2, -1)[0].toLocaleLowerCase();
-
+Object.entries(allImages).forEach(([path, loader]) => {
+ const folder = path
+  .split("/")
+  .slice(-2, -1)[0]
+  .toLowerCase()
+  .replace(/[\s_]+/g, "-") // 🔥 replaces multiple _ or space → single dash
+  .replace(/-+/g, "-")     // 🔥 removes double dash
+  .replace(/[^a-z0-9-]/g, "");
+  
   if (!groupedProjects[folder]) {
     groupedProjects[folder] = [];
   }
 
-  groupedProjects[folder].push(module.default);
+  // 👉 store loader function instead of actual image
+  groupedProjects[folder].push(loader);
 });
 
 // 🧠 FORMAT TITLE
@@ -24,7 +29,7 @@ const formatTitle = (name) =>
     .replaceAll("-", " ")
     .replace(/\b\w/g, (c) => c.toUpperCase());
 
-// 🧠 CUSTOM CONFIG (🔥 IMPORTANT)
+// 🧠 CUSTOM CONFIG (UNCHANGED)
 const projectMeta = {
   villa2: {
     title: "Luxury Villa",
@@ -106,8 +111,6 @@ const projectMeta = {
       "Complete interior design including living room, kitchen, bedrooms, wardrobes, and ceiling work.",
   },
 
-  // 🔥 RADIENT PROJECTS
-
   "radient-jasmine-202-3bhk": {
     title: "Radient Jasmine - 202 3BHK",
     type: "Residential",
@@ -164,11 +167,16 @@ const projects = Object.entries(groupedProjects).map(
 
     return {
       id: index + 1,
-      src: images[0] || "",
+
+      // ⚠️ NOW THIS IS A FUNCTION (IMPORTANT)
+      src: images[0] || null,
+
       title: meta.title || formatTitle(folder),
       type: meta.type || "Project",
       desc: meta.desc || "Project showcase",
       additionalDesc: meta.additionalDesc || "",
+
+      // ⚠️ ARRAY OF FUNCTIONS
       images,
     };
   }

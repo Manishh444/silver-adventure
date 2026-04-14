@@ -9,31 +9,31 @@ const OurWorkPage = () => {
   const hasMore = visibleCount < buildingData.length;
 
   useEffect(() => {
-    if (!hasMore) return;
+    const currentRef = loadMoreRef.current;
+
+    if (!currentRef) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
 
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && hasMore) {
           setVisibleCount((prev) =>
             Math.min(prev + 6, buildingData.length)
           );
         }
       },
       {
-        rootMargin: "200px", // 🔥 preload before reaching bottom
+        rootMargin: "200px",
       }
     );
 
-    const currentRef = loadMoreRef.current;
-
-    if (currentRef) observer.observe(currentRef);
+    observer.observe(currentRef);
 
     return () => {
-      if (currentRef) observer.unobserve(currentRef);
+      observer.disconnect(); // 🔥 better cleanup
     };
-  }, [hasMore]);
+  }, [hasMore]); // OK to keep
 
   const visibleProjects = buildingData.slice(0, visibleCount);
 
