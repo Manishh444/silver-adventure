@@ -1,194 +1,177 @@
-// 🔹 Normal projects
-const officeImages = Object.values(
-  import.meta.glob("@/assets/officeIMG1/*.webp", { eager: true })
-).map((img) => img.default);
+// 🔥 AUTO LOAD ALL PROJECTS
 
-const villaImages = Object.values(
-  import.meta.glob("@/assets/Villa2/*.webp", { eager: true })
-).map((img) => img.default);
-
-const homeImages = Object.values(
-  import.meta.glob("@/assets/home2/*.webp", { eager: true })
-).map((img) => img.default);
-
-const pgImages = Object.values(
-  import.meta.glob("@/assets/PG2/*.webp", { eager: true })
-).map((img) => img.default);
-
-const likithImages = Object.values(
-  import.meta.glob("@/assets/LIKITH-lux-residential/*.webp", { eager: true })
-).map((img) => img.default);
-
-const acresImages = Object.values(
-  import.meta.glob("@/assets/ACRES-LAYOUT-DESIGN/*.webp", { eager: true })
-).map((img) => img.default);
-
-const commercialImages = Object.values(
-  import.meta.glob("@/assets/commercial-building/*.webp", { eager: true })
-).map((img) => img.default);
-
-const sereneImages = Object.values(
-  import.meta.glob(
-    "@/assets/SERENE_GROOVES_FARM_LAND/*.webp",
-    { eager: true }
-  )
-).map((img) => img.default);
-
-const suryaImages = Object.values(
-  import.meta.glob(
-    "@/assets/surya-room-final-renders/*.webp",
-    { eager: true }
-  )
-).map((img) => img.default);
-
-// 🔥 RADIENT (MULTI-FOLDER → FLAT PROJECTS)
-const radientModules = import.meta.glob(
-  "@/assets/radient-jasmine-interiors/*/*.webp",
+const allImages = import.meta.glob(
+  "@/assets/projects/*/*.{webp,jpg,png}",
   { eager: true }
 );
 
-const mamathaImages = Object.values(
-  import.meta.glob(
-    "@/assets/Chandrashekar/*.webp",
-    { eager: true }
-  )
-).map((img) => img.default);
+// 🧠 GROUP IMAGES BY FOLDER
+const groupedProjects = {};
 
-const radientImages = {};
+Object.entries(allImages).forEach(([path, module]) => {
+  const folder = path.split("/").slice(-2, -1)[0].toLocaleLowerCase();
 
-Object.entries(radientModules).forEach(([path, module]) => {
-  const folder = path.split("/").slice(-2, -1)[0];
-
-  if (!radientImages[folder]) {
-    radientImages[folder] = [];
+  if (!groupedProjects[folder]) {
+    groupedProjects[folder] = [];
   }
 
-  radientImages[folder].push(module.default);
+  groupedProjects[folder].push(module.default);
 });
 
-// 🔥 CREATE FLAT CARDS
-const radientCards = Object.entries(radientImages).map(
-  ([unit, imgs], index) => ({
-    id: 8 + index,
-    src: imgs[0],
-    title: `Radient Jasmine - ${unit.replace("-", " ").toUpperCase()}`,
-    type: "Residential",
-    desc: unit.replace("-", " ").toUpperCase(),
-    additionalDesc:
-      "Interior design with modern finishes and optimized space planning.",
-    images: imgs,
-  })
-);
+// 🧠 FORMAT TITLE
+const formatTitle = (name) =>
+  name
+    .replaceAll("-", " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 
-// 🔥 FINAL EXPORT
-export default [
-  {
-    id: 1,
-    src: villaImages[0],
+// 🧠 CUSTOM CONFIG (🔥 IMPORTANT)
+const projectMeta = {
+  villa2: {
     title: "Luxury Villa",
     type: "Residential",
     desc: "Modern 4BHK Villa with contemporary design",
     additionalDesc:
       "Complete construction and interior design for a 3500 sq ft villa featuring open-plan living spaces and smart home integration.",
-    images: villaImages,
   },
 
-  {
-    id: 2,
-    src: officeImages[0],
+  officeimg1: {
     title: "Corporate Office",
     type: "Commercial",
     desc: "Modern office renovation",
     additionalDesc:
       "5000 sq ft office space with collaborative workspaces and ergonomic design.",
-    images: officeImages,
   },
 
-  {
-    id: 3,
-    src: homeImages[0],
+  home2: {
     title: "Residential Complex",
     type: "Construction",
     desc: "30-unit residential project",
     additionalDesc:
-      "Multi-story residential complex with amenities like gym, pool, and gardens.",
-    images: homeImages,
+      "Multi-story residential complex with gym, pool, and landscaped gardens.",
   },
 
-  {
-    id: 4,
-    src: pgImages[0],
+  pg2: {
     title: "Commercial Complex",
     type: "Commercial",
-    desc: "Multi-unit commercial development",
+    desc: "Retail + office space",
     additionalDesc:
-      "Retail shops and office spaces designed for business usage.",
-    images: pgImages,
+      "Multi-unit commercial development designed for business use.",
   },
 
-  {
-    id: 5,
-    src: likithImages[0],
+  "likith-lux-residential": {
     title: "Likith Luxury Residence",
     type: "Residential",
     desc: "Modern luxury G+3 elevation",
     additionalDesc:
       "Premium facade design with balcony landscaping and modern aesthetics.",
-    images: likithImages,
   },
 
-  {
-    id: 6,
-    src: acresImages[0],
+  "acres-layout-design": {
     title: "Acres Layout Design",
     type: "Construction",
     desc: "Residential layout planning",
     additionalDesc:
       "Layout with plots, clubhouse, sports courts, and infrastructure.",
-    images: acresImages,
   },
 
-  {
-    id: 7,
-    src: commercialImages[0],
+  "commercial-building": {
     title: "Commercial Building",
     type: "Commercial",
     desc: "Multi-storey commercial structure",
     additionalDesc:
-      "Retail + office spaces with modern elevation.",
-    images: commercialImages,
+      "Retail and office spaces with modern elevation design.",
   },
-  {
-  id: 103,
-  src: mamathaImages[0] || "",
-  title: "Chandrashekar Residence",
-  type: "Residential",
-  desc: "First & Second Floor Interiors",
-  additionalDesc:
-    "Complete interior design including living room, kitchen, bedrooms, wardrobes and ceiling work.",
-  images: mamathaImages,
-},
-{
-  id: 102,
-  src: sereneImages[0] || "",
-  title: "Serene Grooves Farm Land",
-  type: "Construction",
-  desc: "Farm land layout & development",
-  additionalDesc:
-    "Farm land planning, layout design, landscaping, and infrastructure development.",
-  images: sereneImages,
-},
-{
-  id: 101,
-  src: suryaImages[0] || "",
-  title: "Surya Room Interiors",
-  type: "Residential",
-  desc: "Modern bedroom interior design",
-  additionalDesc:
-    "Customized bedroom interior with wardrobe, lighting, and premium finishes.",
-  images: suryaImages,
-},
 
-  // 🔥 RADIENT PROJECTS (AUTO GENERATED)
-  ...radientCards,
-];
+  "serene-grooves-farm-land": {
+    title: "Serene Grooves Farm Land",
+    type: "Construction",
+    desc: "Farm land layout & development",
+    additionalDesc:
+      "Farm planning, landscaping, and infrastructure development.",
+  },
+
+  "surya-room-final-renders": {
+    title: "Surya Room Interiors",
+    type: "Residential",
+    desc: "Modern bedroom interior design",
+    additionalDesc:
+      "Customized bedroom with wardrobe, lighting, and premium finishes.",
+  },
+
+  chandrashekar: {
+    title: "Chandrashekar Residence",
+    type: "Residential",
+    desc: "First & Second floor interiors",
+    additionalDesc:
+      "Complete interior design including living room, kitchen, bedrooms, wardrobes, and ceiling work.",
+  },
+
+  // 🔥 RADIENT PROJECTS
+
+  "radient-jasmine-202-3bhk": {
+    title: "Radient Jasmine - 202 3BHK",
+    type: "Residential",
+    desc: "202 3BHK",
+    additionalDesc:
+      "Interior design with modern finishes and optimized space planning.",
+  },
+
+  "radient-jasmine-401-3bhk": {
+    title: "Radient Jasmine - 401 3BHK",
+    type: "Residential",
+    desc: "401 3BHK",
+    additionalDesc:
+      "Interior design with modern finishes and optimized space planning.",
+  },
+
+  "radient-jasmine-501-3bhk": {
+    title: "Radient Jasmine - 501 3BHK",
+    type: "Residential",
+    desc: "501 3BHK",
+    additionalDesc:
+      "Interior design with modern finishes and optimized space planning.",
+  },
+
+  "radient-jasmine-kitchen": {
+    title: "Radient Jasmine - Kitchen",
+    type: "Residential",
+    desc: "Kitchen",
+    additionalDesc:
+      "Modern kitchen design with optimized storage and finishes.",
+  },
+
+  "radient-jasmine-tv-unit": {
+    title: "Radient Jasmine - TV Unit",
+    type: "Residential",
+    desc: "TV Unit",
+    additionalDesc:
+      "Modern TV unit design with optimized layout and aesthetics.",
+  },
+
+  "radient-jasmine-wardrobe": {
+    title: "Radient Jasmine - Wardrobe",
+    type: "Residential",
+    desc: "Wardrobe",
+    additionalDesc:
+      "Interior wardrobe design with optimized storage planning.",
+  },
+};
+
+// 🧠 BUILD FINAL PROJECT ARRAY
+const projects = Object.entries(groupedProjects).map(
+  ([folder, images], index) => {
+    const meta = projectMeta[folder] || {};
+
+    return {
+      id: index + 1,
+      src: images[0] || "",
+      title: meta.title || formatTitle(folder),
+      type: meta.type || "Project",
+      desc: meta.desc || "Project showcase",
+      additionalDesc: meta.additionalDesc || "",
+      images,
+    };
+  }
+);
+
+export default projects;

@@ -1,87 +1,100 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const GalleryModal = ({ images = [], title, onClose }) => {
   const [index, setIndex] = useState(0);
 
-  const next = () => setIndex((prev) => (prev + 1) % images.length);
-  const prev = () =>
-    setIndex((prev) => (prev - 1 + images.length) % images.length);
-
-  // ESC to close
+  // ✅ Reset index on new images
   useEffect(() => {
-    const handler = (e) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") next();
-      if (e.key === "ArrowLeft") prev();
+    setIndex(0);
+  }, [images]);
+
+  // ✅ LOCK BACKGROUND (CRITICAL FIX)
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    document.body.style.pointerEvents = "none";
+
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.style.pointerEvents = "auto";
     };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  if (!images.length) return null;
+
+  const next = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIndex((i) => (i + 1) % images.length);
+  };
+
+  const prev = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIndex((i) => (i - 1 + images.length) % images.length);
+  };
+
   return (
-    <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999] pointer-events-auto"
-        onClick={onClose}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}>
-        <motion.div
-          className="relative bg-white rounded-2xl shadow-xl p-4 max-w-4xl w-full mx-4 pointer-events-auto z-[10000]"
-          onClick={(e) => e.stopPropagation()}
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.8, opacity: 0 }}
-          transition={{ duration: 0.2 }}>
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-3 right-3 p-2 rounded-full bg-white/70 hover:bg-white shadow cursor-pointer z-50">
-            <X size={24} className="pointer-events-none" />
-          </button>
-          {/* Image */}
-          <div className="relative w-full h-[450px] flex items-center justify-center overflow-hidden rounded-xl pointer-events-auto">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={index}
-                src={`${images[index]}`}
-                alt={title}
-                className="object-contain w-full h-full"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.25 }}
-              />
-            </AnimatePresence>
+    <div
+      className="fixed inset-0 bg-black/70 flex items-center justify-center z-[999999]"
+      style={{ pointerEvents: "auto" }}
+      onClick={(e) => {
+        e.stopPropagation();
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div
+        className="relative bg-white rounded-2xl p-4 max-w-4xl w-full mx-4"
+        style={{ pointerEvents: "auto" }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* CLOSE */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          className="absolute top-3 right-3 p-2 bg-white rounded-full shadow z-50"
+        >
+          <X size={24} />
+        </button>
 
-            {/* Prev Button */}
-            {images.length > 1 && (
-              <button
-                onClick={prev}
-                className="absolute left-3 bg-white/80 p-2 rounded-full shadow hover:bg-white transition pointer-events-auto z-[10001]">
-                <ChevronLeft size={30} />
-              </button>
-            )}
+        {/* IMAGE */}
+        <div className="relative h-[450px] flex items-center justify-center">
+          <img
+            src={images[index]}
+            alt={title}
+            decoding="async"
+            className="w-full h-full object-contain"
+          />
 
-            {/* Next Button */}
-            {images.length > 1 && (
-              <button
-                onClick={next}
-                className="absolute right-3 bg-white/80 p-2 rounded-full shadow hover:bg-white transition pointer-events-auto z-[10001]">
-                <ChevronRight size={30} />
-              </button>
-            )}
-          </div>
+          {/* PREV */}
+          {images.length > 1 && (
+            <button
+              onClick={prev}
+              className="absolute left-3 bg-white p-2 rounded-full shadow z-50"
+            >
+              <ChevronLeft size={30} />
+            </button>
+          )}
 
-          {/* Image Counter */}
-          <p className="text-center mt-3 text-gray-600">
-            {index + 1} / {images.length}
-          </p>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+          {/* NEXT */}
+          {images.length > 1 && (
+            <button
+              onClick={next}
+              className="absolute right-3 bg-white p-2 rounded-full shadow z-50"
+            >
+              <ChevronRight size={30} />
+            </button>
+          )}
+        </div>
+
+        {/* COUNTER */}
+        <p className="text-center mt-3">
+          {index + 1} / {images.length}
+        </p>
+      </div>
+    </div>
   );
 };
 

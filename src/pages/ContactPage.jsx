@@ -11,7 +11,7 @@ const formik = useFormik({
     subject: "",
     phone: "",
     message: "",
-  },
+  }, 
   onSubmit: async (values, { resetForm }) => {
     try {
       const res = await fetch(
@@ -37,7 +37,7 @@ const formik = useFormik({
   },
 });
 
-  console.log(formik);
+  // console.log(formik);
 
   return (
     <>
